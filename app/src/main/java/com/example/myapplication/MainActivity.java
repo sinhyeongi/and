@@ -12,12 +12,14 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
     FragmentManager fragmentManager = getSupportFragmentManager();
-    private main_frag main_frag = new main_frag();
-
+    private main_frag main_frag;
+    private Frag_state frag_state;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        main_frag = new main_frag();
+        frag_state = new Frag_state();
         FragmentTransaction fragmentTransaction =
                 fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame,main_frag).commitAllowingStateLoss();
@@ -30,7 +32,12 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.main:
-                        transaction.replace(R.id.layout,main_frag).commitAllowingStateLoss();
+                        transaction.replace(R.id.frame,main_frag).commitAllowingStateLoss();
+                        break;
+                    case R.id.state:
+                        transaction.replace(R.id.frame,frag_state).commitAllowingStateLoss();
+                        break;
+                    case R.id.save:
                         break;
                 }
                 return false;
