@@ -68,9 +68,12 @@ public class state extends Fragment {
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_state,null);
-        String[] list={" "};
+        String[] list = new String[2];
         String name = sharedPreferences.getString("name"," ");
+        String Level = sharedPreferences.getString("Level","0");
+
         list[0] = name;
+        list[1] = Level;
         ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1,list);
         ListView listView = (ListView) view.findViewById(R.id.state_list);
         listView.setAdapter(adapter);
