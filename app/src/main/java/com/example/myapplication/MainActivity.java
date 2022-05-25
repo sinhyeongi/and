@@ -7,8 +7,11 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -16,25 +19,35 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     FragmentManager fragmentManager = getSupportFragmentManager();
-    private main main_frag;
-    private state frag_state;
-    private save frag_save;
-    ListView listView;
-    List<String> list;
+    private main main_frag = new main();
+    private state frag_state = new state();
+    private save frag_save = new save();
+    TextView textView;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
-
+    int i =0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        main_frag = new main();
-        frag_state = new state();
-        frag_save = new save();
+
+
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame,main_frag).commitAllowingStateLoss();
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigationView);
-        listView = (ListView) findViewById(R.id.state_list);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+            i++;
+                try {
+                    Thread.sleep(1000);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+        this.text(i);
         //bottom click event
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             FragmentTransaction transaction;
@@ -64,9 +77,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     //main end
-
-    @Override
-    protected void onPause() {
-        super.onPause();
+    public void text(int i){
+        main_frag.setTextView(String.valueOf(i));
     }
 }

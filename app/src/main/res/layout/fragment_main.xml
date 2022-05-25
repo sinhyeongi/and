@@ -8,25 +8,46 @@
 
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
+        android:id="@+id/relative"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/relative">
+        android:layout_height="match_parent">
+
         <Button
+            android:id="@+id/main_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/main_btn"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
             android:layout_marginTop="15dp"
-            android:text="미니게임"/>
+            android:layout_marginRight="10dp"
+            android:text="미니게임" />
+
         <Button
+            android:id="@+id/btn_raid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/main_btn"
             android:layout_marginTop="15dp"
-            android:text="레이드"
-            android:id="@+id/btn_raid"/>
+            android:layout_toLeftOf="@+id/main_btn"
+            android:text="레이드" />
+
+        <TextView
+            android:id="@+id/main_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_toLeftOf="@+id/btn_raid"
+            android:gravity="center"
+            android:text="0"
+            android:textSize="30dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_toLeftOf="@id/main_money"
+            android:gravity="right"
+            android:text="돈 : "
+            android:textSize="30dp" />
+
     </RelativeLayout>
 
 

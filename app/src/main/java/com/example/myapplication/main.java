@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -18,7 +19,7 @@ import android.widget.Toast;
  * create an instance of this fragment.
  */
 public class main extends Fragment {
-
+    TextView textView;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -62,11 +63,13 @@ public class main extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         // Inflate the layout for this fragment
         Button mini,raid;
         mini = (Button) view.findViewById(R.id.main_btn);
         raid = (Button) view.findViewById(R.id.btn_raid);
+        textView = view.findViewById(R.id.main_money);
         mini.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,7 +88,11 @@ public class main extends Fragment {
 
             }
         });
+
         return view;
+    }
+    public void setTextView(String str){
+        textView.setText(str);
     }
 
 }
