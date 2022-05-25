@@ -17,8 +17,16 @@
             android:id="@+id/main_btn"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="15dp"
+            android:text="미니게임"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/main_btn"
+            android:layout_marginTop="15dp"
+            android:text="레이드"
+            android:id="@+id/btn_raid"/>
     </RelativeLayout>
 
 
