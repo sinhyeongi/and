@@ -1,5 +1,7 @@
 package com.example.myapplication;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +9,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,7 +64,16 @@ public class state extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences("state", Context.MODE_PRIVATE);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_state, container, false);
+        View view = inflater.inflate(R.layout.fragment_state,null);
+        String[] list={" "};
+        String name = sharedPreferences.getString("name"," ");
+        list[0] = name;
+        ArrayAdapter adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1,list);
+        ListView listView = (ListView) view.findViewById(R.id.state_list);
+        listView.setAdapter(adapter);
+        return view;
     }
 }
