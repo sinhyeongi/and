@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     FragmentManager fragmentManager = getSupportFragmentManager();
     private main main_frag;
     private state frag_state;
+    private save frag_save;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
 
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         main_frag = new main();
         frag_state = new state();
+        frag_save = new save();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame,main_frag).commitAllowingStateLoss();
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigationView);
@@ -45,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
                         transaction.commitAllowingStateLoss();
                         return true;
                     case R.id.save:
+                        transaction = getSupportFragmentManager().beginTransaction();
+                        transaction.replace(R.id.frame,frag_save);
+                        transaction.commitAllowingStateLoss();
                         return true;
                 }
                 return false;
