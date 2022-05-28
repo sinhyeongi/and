@@ -63,11 +63,23 @@ public class MainActivity extends AppCompatActivity {
             Thread.interrupted();
         }
     });
-
+    Thread first = new Thread(new Runnable() {
+        @Override
+        public void run() {
+            Intent intent = new Intent(getApplicationContext(),First_Layout.class);
+            startActivity(intent);
+        }
+    });
     //onCreate
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        first.start();
+        try {
+            first.join();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         setContentView(R.layout.activity_main);
         Q_L();
         BtnEventLoad();
