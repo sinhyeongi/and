@@ -9,8 +9,12 @@ import android.widget.Button;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+/*
+저장 MiniGame
 
-public class minigame_1 extends AppCompatActivity {
+*/
+
+public class MiniGame_1 extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     Button btn;
@@ -18,17 +22,19 @@ public class minigame_1 extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.minigame_1);
-        qr();
-        click();
+        qr();click();
 
 
 
     }
+    //onCreate end
+
     private void qr(){
-        sharedPreferences = getSharedPreferences("game_1",Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("MiniGame",Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
         btn = (Button) findViewById(R.id.game1_home);
     }
+    //클릭이벤트
     private void click(){
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
@@ -37,10 +43,16 @@ public class minigame_1 extends AppCompatActivity {
                     case R.id.game1_home:
                         Intent intent = new Intent(view.getContext(),MainActivity.class);
                         startActivity(intent);
+                        finish();
                         break;
                 }
             }
         };
         btn.setOnClickListener(onClickListener);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
     }
 }
