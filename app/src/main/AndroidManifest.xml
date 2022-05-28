@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".MainActivity"
+            android:name=".First_Layout"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,8 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".First_Layout"/>
+        <activity android:name=".MainActivity"/>
         <activity android:name=".MiniGame_1"/>
+        <activity android:name=".First_Select"/>
+        <activity android:name=".Select_load"/>
+        <activity android:name=".Select_new"/>
     </application>
 
 </manifest>

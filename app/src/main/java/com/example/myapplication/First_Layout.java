@@ -15,8 +15,10 @@ public class First_Layout extends AppCompatActivity {
         setContentView(R.layout.first_layout);
         relativeLayout = (RelativeLayout) findViewById(R.id.first_click);
         relativeLayout.setOnClickListener(new View.OnClickListener() {
+            Intent intent = new Intent(getApplicationContext(),First_Select.class);
             @Override
             public void onClick(View view) {
+                startActivity(intent);
                 finish();
             }
         });
