@@ -18,11 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".MiniGame_1"/>
-        <activity android:name=".First_Select"/>
-        <activity android:name=".Select_load"/>
-        <activity android:name=".Select_new"/>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".First_Select"></activity>
+        <activity android:name=".Select_load"></activity>
+        <activity android:name=".Select_new"></activity>
+        <activity android:name=".Select_Characters"></activity>
+        <activity android:name=".MiniGame_1"></activity>
     </application>
 
 </manifest>

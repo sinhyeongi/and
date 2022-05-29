@@ -17,6 +17,9 @@ public class First_Select extends AppCompatActivity {
         btn_exit = (Button) findViewById(R.id.btn_exit);
         btn_new = (Button) findViewById(R.id.btn_new);
         btn_load = (Button) findViewById(R.id.btn_load);
+        btn_exit.setOnClickListener(onClickListener);
+        btn_new.setOnClickListener(onClickListener);
+        btn_load.setOnClickListener(onClickListener);
     }
     View.OnClickListener onClickListener = new View.OnClickListener() {
         Intent intent;
@@ -25,12 +28,12 @@ public class First_Select extends AppCompatActivity {
             switch (view.getId())
             {
                 case R.id.btn_load:
-                    intent = new Intent(getApplicationContext(),MainActivity.class);
+                    intent = new Intent(getApplicationContext(),Select_load.class);
                     startActivity(intent);
                     finish();
                     return;
                 case R.id.btn_new:
-                    intent = new Intent(getApplicationContext(),MainActivity.class);
+                    intent = new Intent(getApplicationContext(),Select_new.class);
                     startActivity(intent);
                     finish();
                     return;
@@ -40,4 +43,5 @@ public class First_Select extends AppCompatActivity {
             }
         }
     };
+
 }

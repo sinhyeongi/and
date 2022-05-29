@@ -74,19 +74,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        first.start();
-        try {
-            first.join();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
         setContentView(R.layout.activity_main);
         Q_L();
         BtnEventLoad();
         textView.setText(String.valueOf(sharedPreferences.getInt("money",0)));
 
         imageView.setImageResource(sharedPreferences.getInt("ch_Img", R.drawable.ic_launcher_foreground));
-        Glide.with(this).load(Return_ImgId(sharedPreferences.getInt("ch_img", R.drawable.ic_launcher_foreground))).into(imageView);
+        Glide.with(this).load(Return_ImgId(sharedPreferences.getInt("Character", R.drawable.ic_launcher_foreground))).into(imageView);
 
         money.setDaemon(true);
         money.start();
@@ -199,6 +193,11 @@ public class MainActivity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.main_money);
 
         return;
+    }
+    //save
+    public void btn_save(){
+        editor.putInt("money",Integer.parseInt(textView.getText().toString()));
+        editor.putInt("Level",0);
     }
     @Override
     protected void onPause() {
