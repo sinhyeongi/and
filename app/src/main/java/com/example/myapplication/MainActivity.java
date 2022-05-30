@@ -176,10 +176,7 @@ public class MainActivity extends AppCompatActivity {
         transaction.commitAllowingStateLoss();
     }
     //저장 함수
-    private void Game_Save(){
-        editor.putInt("money",Integer.parseInt(textView.getText().toString()));
-        editor.commit();
-    }
+
     private void Q_L(){
         sharedPreferences = getSharedPreferences("main",MODE_PRIVATE);
         editor = sharedPreferences.edit();
@@ -197,12 +194,13 @@ public class MainActivity extends AppCompatActivity {
     //save
     public void btn_save(){
         editor.putInt("money",Integer.parseInt(textView.getText().toString()));
-        editor.putInt("Level",0);
+        editor.putInt("Level",1);
+        editor.commit();
     }
     @Override
     protected void onPause() {
         super.onPause();
-        Game_Save();
+        btn_save();
         money.interrupt();
 
     }
@@ -210,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Game_Save();
+        btn_save();
         money.interrupt();
     }
 }

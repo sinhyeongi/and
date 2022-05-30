@@ -1,16 +1,22 @@
 package com.example.myapplication;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.sql.PreparedStatement;
 import java.util.List;
@@ -23,6 +29,7 @@ import java.util.List;
 public class save extends Fragment{
     ListView listView;
     List<String> list;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -68,14 +75,21 @@ public class save extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("main", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
         View view = inflater.inflate(R.layout.fragment_save,null);
         TextView textView1,textView2,textView3,textView4,textView5,textView6;
+
+        Button btn1,btn2,btn3;
         textView1 = (TextView) view.findViewById(R.id.level1);
         textView2 = (TextView) view.findViewById(R.id.money1);
         textView3 = (TextView) view.findViewById(R.id.level2);
         textView4 = (TextView) view.findViewById(R.id.money2);
         textView5 = (TextView) view.findViewById(R.id.level3);
         textView6 = (TextView) view.findViewById(R.id.money3);
+        btn1 = (Button) view.findViewById(R.id.btn_save1);
+        btn2 = (Button) view.findViewById(R.id.btn_save2);
+        btn3 = (Button) view.findViewById(R.id.btn_save3);
+
         if (sharedPreferences.getInt("Save1_Level",0) > 0){
             textView1.setText(String.valueOf(sharedPreferences.getInt("Save1_Level",0)));
             textView2.setText(String.valueOf(sharedPreferences.getInt("Save1_money",0)));
@@ -88,6 +102,110 @@ public class save extends Fragment{
             textView5.setText(String.valueOf(sharedPreferences.getInt("Save3_Level",0)));
             textView6.setText(String.valueOf(sharedPreferences.getInt("Save3_money",0)));
         }
+        btn1.setOnClickListener(new View.OnClickListener() {
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            @Override
+            public void onClick(View view) {
+                ((MainActivity) getActivity()).btn_save();
+                if (sharedPreferences.getInt("Save1_Level", 0) > 0) {
+                    builder.setTitle("저장");
+                    builder.setMessage("덮어쓰시겠습니까?");
+                    builder.setNegativeButton("예", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            editor.putInt("Save1_Level", sharedPreferences.getInt("Level", 0));
+                            editor.putInt("Save1_money", sharedPreferences.getInt("money", 0));
+                            editor.commit();
+                            textView1.setText(String.valueOf(sharedPreferences.getInt("Save1_Level", 0)));
+                            textView2.setText(String.valueOf(sharedPreferences.getInt("Save1_money", 0)));
+                        }
+                    });
+                    builder.setPositiveButton("아니요", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            return;
+                        }
+                    });
+                    builder.show();
+                } else {
+                    editor.putInt("Save1_Level", sharedPreferences.getInt("Level", 0));
+                    editor.putInt("Save1_money", sharedPreferences.getInt("money", 0));
+                    editor.commit();
+                    textView1.setText(String.valueOf(sharedPreferences.getInt("Save1_Level", 0)));
+                    textView2.setText(String.valueOf(sharedPreferences.getInt("Save1_money", 0)));
+                }
+            }
+            });
+        btn2.setOnClickListener(new View.OnClickListener() {
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            @Override
+            public void onClick(View view) {
+                ((MainActivity) getActivity()).btn_save();
+                if (sharedPreferences.getInt("Save2_Level", 0) > 0) {
+                    builder.setTitle("저장");
+                    builder.setMessage("덮어쓰시겠습니까?");
+                    builder.setNegativeButton("예", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            editor.putInt("Save2_Level", sharedPreferences.getInt("Level", 0));
+                            editor.putInt("Save2_money", sharedPreferences.getInt("money", 0));
+                            editor.commit();
+                            textView3.setText(String.valueOf(sharedPreferences.getInt("Save2_Level", 0)));
+                            textView4.setText(String.valueOf(sharedPreferences.getInt("Save2_money", 0)));
+                        }
+                    });
+                    builder.setPositiveButton("아니요", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            return;
+                        }
+                    });
+                    builder.show();
+                } else {
+                    editor.putInt("Save2_Level", sharedPreferences.getInt("Level", 0));
+                    editor.putInt("Save2_money", sharedPreferences.getInt("money", 0));
+                    editor.commit();
+                    textView3.setText(String.valueOf(sharedPreferences.getInt("Save2_Level", 0)));
+                    textView4.setText(String.valueOf(sharedPreferences.getInt("Save2_money", 0)));
+                }
+            }
+        });
+        btn3.setOnClickListener(new View.OnClickListener() {
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            @Override
+            public void onClick(View view) {
+                ((MainActivity) getActivity()).btn_save();
+                if (sharedPreferences.getInt("Save3_Level", 0) > 0) {
+                    builder.setTitle("저장");
+                    builder.setMessage("덮어쓰시겠습니까?");
+                    builder.setNegativeButton("예", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            editor.putInt("Save3_Level", sharedPreferences.getInt("Level", 0));
+                            editor.putInt("Save3_money", sharedPreferences.getInt("money", 0));
+                            editor.commit();
+                            textView5.setText(String.valueOf(sharedPreferences.getInt("Save3_Level", 0)));
+                            textView6.setText(String.valueOf(sharedPreferences.getInt("Save3_money", 0)));
+                        }
+                    });
+                    builder.setPositiveButton("아니요", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            return;
+                        }
+                    });
+                    builder.show();
+                } else {
+                    editor.putInt("Save3_Level", sharedPreferences.getInt("Level", 0));
+                    editor.putInt("Save3_money", sharedPreferences.getInt("money", 0));
+                    editor.commit();
+                    textView5.setText(String.valueOf(sharedPreferences.getInt("Save3_Level", 0)));
+                    textView6.setText(String.valueOf(sharedPreferences.getInt("Save3_money", 0)));
+                }
+            }
+        });
+
         return view;
     }
+
 }
