@@ -38,16 +38,19 @@ public class Select_new extends AppCompatActivity {
             switch (view.getId())
             {
                 case R.id.btn_ez:
+                    First_setting();
                     editor.putInt("difficulty",1);
                     editor.commit();
                     Change_view(Select_Characters.class);
                     break;
                 case R.id.btn_normal:
+                    First_setting();
                     editor.putInt("difficulty",2);
                     editor.commit();
                     Change_view(Select_Characters.class);
                     break;
                 case R.id.btn_hard:
+                    First_setting();
                     editor.putInt("difficulty",3);
                     editor.commit();
                     Change_view(Select_Characters.class);
@@ -64,5 +67,10 @@ public class Select_new extends AppCompatActivity {
         startActivity(intent);
         finish();
 
+    }
+    public void First_setting(){
+        editor.putInt("Level",1);
+        editor.putInt("money",0);
+        editor.commit();
     }
 }
