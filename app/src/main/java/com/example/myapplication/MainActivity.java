@@ -200,7 +200,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        btn_save();
         money.interrupt();
 
     }
@@ -208,7 +207,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        btn_save();
         money.interrupt();
     }
 }

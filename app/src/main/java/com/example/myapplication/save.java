@@ -115,6 +115,7 @@ public class save extends Fragment{
                         public void onClick(DialogInterface dialogInterface, int i) {
                             editor.putInt("Save1_Level", sharedPreferences.getInt("Level", 0));
                             editor.putInt("Save1_money", sharedPreferences.getInt("money", 0));
+                            editor.putInt("Save1_ch_Img", R.drawable.ic_launcher_foreground);
                             editor.commit();
                             textView1.setText(String.valueOf(sharedPreferences.getInt("Save1_Level", 0)));
                             textView2.setText(String.valueOf(sharedPreferences.getInt("Save1_money", 0)));
@@ -130,6 +131,7 @@ public class save extends Fragment{
                 } else {
                     editor.putInt("Save1_Level", sharedPreferences.getInt("Level", 0));
                     editor.putInt("Save1_money", sharedPreferences.getInt("money", 0));
+                    editor.putInt("Save1_ch_Img", R.drawable.ic_launcher_foreground);
                     editor.commit();
                     textView1.setText(String.valueOf(sharedPreferences.getInt("Save1_Level", 0)));
                     textView2.setText(String.valueOf(sharedPreferences.getInt("Save1_money", 0)));
@@ -149,6 +151,7 @@ public class save extends Fragment{
                         public void onClick(DialogInterface dialogInterface, int i) {
                             editor.putInt("Save2_Level", sharedPreferences.getInt("Level", 0));
                             editor.putInt("Save2_money", sharedPreferences.getInt("money", 0));
+                            editor.putInt("Save2_ch_Img", R.drawable.ic_launcher_foreground);
                             editor.commit();
                             textView3.setText(String.valueOf(sharedPreferences.getInt("Save2_Level", 0)));
                             textView4.setText(String.valueOf(sharedPreferences.getInt("Save2_money", 0)));
@@ -164,6 +167,7 @@ public class save extends Fragment{
                 } else {
                     editor.putInt("Save2_Level", sharedPreferences.getInt("Level", 0));
                     editor.putInt("Save2_money", sharedPreferences.getInt("money", 0));
+                    editor.putInt("Save2_ch_Img", R.drawable.ic_launcher_foreground);
                     editor.commit();
                     textView3.setText(String.valueOf(sharedPreferences.getInt("Save2_Level", 0)));
                     textView4.setText(String.valueOf(sharedPreferences.getInt("Save2_money", 0)));
@@ -183,6 +187,7 @@ public class save extends Fragment{
                         public void onClick(DialogInterface dialogInterface, int i) {
                             editor.putInt("Save3_Level", sharedPreferences.getInt("Level", 0));
                             editor.putInt("Save3_money", sharedPreferences.getInt("money", 0));
+                            editor.putInt("Save3_ch_Img", R.drawable.ic_launcher_foreground);
                             editor.commit();
                             textView5.setText(String.valueOf(sharedPreferences.getInt("Save3_Level", 0)));
                             textView6.setText(String.valueOf(sharedPreferences.getInt("Save3_money", 0)));
@@ -198,6 +203,7 @@ public class save extends Fragment{
                 } else {
                     editor.putInt("Save3_Level", sharedPreferences.getInt("Level", 0));
                     editor.putInt("Save3_money", sharedPreferences.getInt("money", 0));
+                    editor.putInt("Save3_ch_Img", R.drawable.ic_launcher_foreground);
                     editor.commit();
                     textView5.setText(String.valueOf(sharedPreferences.getInt("Save3_Level", 0)));
                     textView6.setText(String.valueOf(sharedPreferences.getInt("Save3_money", 0)));

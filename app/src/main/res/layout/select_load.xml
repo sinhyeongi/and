@@ -4,7 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/save1_level"
+        android:backgroundTint="#00ff0000"
+        android:background="#00ff0000"
+        app:layout_constraintBottom_toBottomOf="@+id/save1_money"
+        android:id="@+id/btn_save1"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/save2_level"
+        android:backgroundTint="#00ff0000"
+        android:background="#00ff0000"
+        app:layout_constraintBottom_toBottomOf="@+id/save2_money"
+        android:id="@+id/btn_save2"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/save3_level"
+        android:backgroundTint="#00ff0000"
+        android:background="#00ff0000"
+        app:layout_constraintBottom_toBottomOf="@+id/save3_money"
+        android:id="@+id/btn_save3"/>
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"

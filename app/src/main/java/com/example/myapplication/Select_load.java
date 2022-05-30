@@ -1,14 +1,88 @@
 package com.example.myapplication;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Select_load extends AppCompatActivity {
+    Button btn1,btn2,btn3;
+    TextView textView1,textView2,textView3,textView4,textView5,textView6;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select_load);
+        qq();
+
+        if (sharedPreferences.getInt("Save1_Level",0) > 0){
+            textView1.setText(String.valueOf(sharedPreferences.getInt("Save1_Level",0)));
+            textView2.setText(String.valueOf(sharedPreferences.getInt("Save1_money",0)));
+        }
+        if (sharedPreferences.getInt("Save2_Level",0) > 0){
+            textView3.setText(String.valueOf(sharedPreferences.getInt("Save2_Level",0)));
+            textView4.setText(String.valueOf(sharedPreferences.getInt("Save2_money",0)));
+        }
+        if (sharedPreferences.getInt("Save3_Level",0) > 0){
+            textView5.setText(String.valueOf(sharedPreferences.getInt("Save3_Level",0)));
+            textView6.setText(String.valueOf(sharedPreferences.getInt("Save3_money",0)));
+        }
+
+        btn1.setOnClickListener(onClickListener);
+        btn2.setOnClickListener(onClickListener);
+        btn3.setOnClickListener(onClickListener);
+
+    }
+    View.OnClickListener onClickListener = new View.OnClickListener() {
+        Intent intent;
+        @Override
+        public void onClick(View view) {
+            qq();
+            switch (view.getId()){
+                case R.id.btn_save1:
+
+                    editor.putInt("money",sharedPreferences.getInt("Save1_money",0));
+                    editor.putInt("Level",sharedPreferences.getInt("Save1_Level",0));
+                    ChangeHome(MainActivity.class);
+                    break;
+                case R.id.btn_save2:
+
+                    editor.putInt("money",sharedPreferences.getInt("Save2_money",0));
+                    editor.putInt("Level",sharedPreferences.getInt("Save2_Level",0));
+                    ChangeHome(MainActivity.class);
+                    break;
+                case R.id.btn_save3:
+
+                    editor.putInt("money",sharedPreferences.getInt("Save3_money",0));
+                    editor.putInt("Level",sharedPreferences.getInt("Save3_Level",0));
+                    ChangeHome(MainActivity.class);
+                    break;
+            }
+        }
+    };
+    public void ChangeHome(Class aClass){
+        Intent intent = new Intent(getApplicationContext(), aClass);
+        startActivity(intent);
+        finish();
+    }
+    private void qq(){
+        btn1 = (Button) findViewById(R.id.btn_save1);
+        btn2 = (Button) findViewById(R.id.btn_save2);
+        btn3 = (Button) findViewById(R.id.btn_save3);
+        textView1 = (TextView) findViewById(R.id.level1);
+        textView2 = (TextView) findViewById(R.id.money1);
+        textView3 = (TextView) findViewById(R.id.level2);
+        textView4 = (TextView) findViewById(R.id.money2);
+        textView5 = (TextView) findViewById(R.id.level3);
+        textView6 = (TextView) findViewById(R.id.money3);
+        sharedPreferences = getSharedPreferences("main",MODE_PRIVATE);
+        editor = sharedPreferences.edit();
     }
 }
