@@ -10,19 +10,19 @@
         android:layout_alignParentRight="true"
         android:layout_marginTop="30dp"
         android:layout_marginRight="40dp"/>
+
     <ImageView
         android:id="@+id/MiniGame_card1"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/card_d"
         android:layout_above="@+id/MiniGame_card3"
+        android:layout_marginLeft="40dp"
         android:layout_marginBottom="20dp"
-        android:layout_marginLeft="40dp" />
+        android:background="?attr/selectableItemBackground"/>
 
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/card_d"
         android:id="@+id/MiniGame_card3"
         android:layout_centerVertical="true"
         android:layout_marginLeft="40dp"/>
@@ -30,7 +30,6 @@
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/card_d"
         android:id="@+id/MiniGame_card5"
         android:layout_below="@+id/MiniGame_card3"
         android:layout_marginTop="20dp"
@@ -41,7 +40,7 @@
         android:id="@+id/MiniGame_card2"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/card_d"
+
         android:layout_above="@+id/MiniGame_card4"
         android:layout_alignStart="@+id/MiniGame_card4"
         android:layout_marginBottom="20dp"/>
@@ -52,13 +51,11 @@
         android:layout_height="150dp"
         android:layout_centerVertical="true"
         android:layout_marginLeft="40dp"
-        android:layout_toRightOf="@+id/MiniGame_card3"
-        android:src="@drawable/card_d" />
+        android:layout_toRightOf="@+id/MiniGame_card3" />
 
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@drawable/card_d"
         android:id="@+id/MiniGame_card6"
         android:layout_below="@+id/MiniGame_card4"
         android:layout_marginTop="20dp"

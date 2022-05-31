@@ -147,9 +147,8 @@ public class MainActivity extends AppCompatActivity {
                     a = random.nextInt(2);
                     switch (a){
                         case 0:
-                            ChangeHome(MiniGame_1.class);
-                            finish();
                             btn_save();
+                            ChangeHome(MiniGame_1.class);
                             break;
                         case 1:
                             Toast.makeText(getApplicationContext(),"22",Toast.LENGTH_SHORT).show();
