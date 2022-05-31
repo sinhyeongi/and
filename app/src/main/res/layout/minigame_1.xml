@@ -2,17 +2,68 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="50dp"
-        android:text="1111"
-        android:layout_centerInParent="true"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:text="home"
+        android:id="@+id/MiniGame_home"
         android:layout_alignParentRight="true"
-        android:text="홈"
-        android:id="@+id/game1_home"/>
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="40dp"/>
+    <ImageView
+        android:id="@+id/MiniGame_card1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/card_d"
+        android:layout_above="@+id/MiniGame_card3"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="40dp" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/card_d"
+        android:id="@+id/MiniGame_card3"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="40dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/card_d"
+        android:id="@+id/MiniGame_card5"
+        android:layout_below="@+id/MiniGame_card3"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"/>
+
+    /* ---------------------------------*/
+    <ImageView
+        android:id="@+id/MiniGame_card2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/card_d"
+        android:layout_above="@+id/MiniGame_card4"
+        android:layout_alignStart="@+id/MiniGame_card4"
+        android:layout_marginBottom="20dp"/>
+
+    <ImageView
+        android:id="@+id/MiniGame_card4"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="40dp"
+        android:layout_toRightOf="@+id/MiniGame_card3"
+        android:src="@drawable/card_d" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/card_d"
+        android:id="@+id/MiniGame_card6"
+        android:layout_below="@+id/MiniGame_card4"
+        android:layout_marginTop="20dp"
+        android:layout_alignStart="@+id/MiniGame_card4"/>
+
+
+
 </RelativeLayout>

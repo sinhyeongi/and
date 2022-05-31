@@ -32,7 +32,7 @@ public class MiniGame_1 extends AppCompatActivity {
     private void qr(){
         sharedPreferences = getSharedPreferences("MiniGame",Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
-        btn = (Button) findViewById(R.id.game1_home);
+        btn = (Button) findViewById(R.id.MiniGame_home);
     }
     //클릭이벤트
     private void click(){
@@ -40,7 +40,7 @@ public class MiniGame_1 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 switch (view.getId()){
-                    case R.id.game1_home:
+                    case R.id.MiniGame_home:
                         Intent intent = new Intent(view.getContext(),MainActivity.class);
                         startActivity(intent);
                         finish();
