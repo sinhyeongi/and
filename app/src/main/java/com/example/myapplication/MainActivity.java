@@ -17,6 +17,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -85,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         money.setDaemon(true);
         money.start();
         bottomNavigationView.setOnNavigationItemSelectedListener(new ItemSelectedListener());
-
+        mimi.setOnClickListener(onClickListener);
 
     }
     //main end
@@ -137,11 +138,29 @@ public class MainActivity extends AppCompatActivity {
 
     //버튼 클릭 이벤트
    View.OnClickListener onClickListener = new View.OnClickListener() {
+        Random random = new Random();
+        int a;
         @Override
         public void onClick(View view) {
             switch (view.getId()){
                 case R.id.main_btn:
-                    ChangeHome(MiniGame_1.class);
+                    a = random.nextInt(2);
+                    switch (a){
+                        case 0:
+                            ChangeHome(MiniGame_1.class);
+                            finish();
+                            btn_save();
+                            break;
+                        case 1:
+                            Toast.makeText(getApplicationContext(),"22",Toast.LENGTH_SHORT).show();
+                            break;
+                        case 2:
+                            Toast.makeText(getApplicationContext(),"33",Toast.LENGTH_SHORT).show();
+                            break;
+                        default:
+                            Toast.makeText(getApplicationContext(),a,Toast.LENGTH_SHORT).show();
+                            break;
+                    }
                     return;
                 case R.id.btn_raid:
                     return;
