@@ -3,6 +3,7 @@ package com.example.myapplication;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -20,6 +21,8 @@ public class Select_load extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.select_load);
+        sharedPreferences = getSharedPreferences("main",MODE_PRIVATE);
+        editor = sharedPreferences.edit();
         qq();
 
         if (sharedPreferences.getInt("Save1_Level",0) > 0){
@@ -47,22 +50,33 @@ public class Select_load extends AppCompatActivity {
             qq();
             switch (view.getId()){
                 case R.id.btn_save1:
+                    if (sharedPreferences.getInt("Save1_Level",0) > 0) {
+                        editor.putInt("money", sharedPreferences.getInt("Save1_money", 0));
+                        editor.putInt("Level", sharedPreferences.getInt("Save1_Level", 0));
+                        editor.putInt("Character", sharedPreferences.getInt("Save1_ch_Img", 0));
+                        editor.commit();
 
-                    editor.putInt("money",sharedPreferences.getInt("Save1_money",0));
-                    editor.putInt("Level",sharedPreferences.getInt("Save1_Level",0));
-                    ChangeHome(MainActivity.class);
+                        ChangeHome(MainActivity.class);
+                    }
                     break;
                 case R.id.btn_save2:
+                    if (sharedPreferences.getInt("Save2_Level",0) > 0) {
+                        editor.putInt("money", sharedPreferences.getInt("Save2_money", 0));
+                        editor.putInt("Level", sharedPreferences.getInt("Save2_Level", 0));
+                        editor.putInt("Character", sharedPreferences.getInt("Save2_ch_Img", 0));
+                        editor.commit();
 
-                    editor.putInt("money",sharedPreferences.getInt("Save2_money",0));
-                    editor.putInt("Level",sharedPreferences.getInt("Save2_Level",0));
-                    ChangeHome(MainActivity.class);
+                        ChangeHome(MainActivity.class);
+                    }
                     break;
                 case R.id.btn_save3:
-
-                    editor.putInt("money",sharedPreferences.getInt("Save3_money",0));
-                    editor.putInt("Level",sharedPreferences.getInt("Save3_Level",0));
-                    ChangeHome(MainActivity.class);
+                    if (sharedPreferences.getInt("Save1_Level",0) > 0) {
+                        editor.putInt("money", sharedPreferences.getInt("Save3_money", 0));
+                        editor.putInt("Level", sharedPreferences.getInt("Save3_Level", 0));
+                        editor.putInt("Character", sharedPreferences.getInt("Save3_ch_Img", 0));
+                        editor.commit();
+                        ChangeHome(MainActivity.class);
+                    }
                     break;
             }
         }
@@ -82,7 +96,6 @@ public class Select_load extends AppCompatActivity {
         textView4 = (TextView) findViewById(R.id.money2);
         textView5 = (TextView) findViewById(R.id.level3);
         textView6 = (TextView) findViewById(R.id.money3);
-        sharedPreferences = getSharedPreferences("main",MODE_PRIVATE);
-        editor = sharedPreferences.edit();
+
     }
 }

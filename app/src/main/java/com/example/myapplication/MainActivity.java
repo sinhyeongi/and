@@ -1,11 +1,13 @@
 package com.example.myapplication;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -80,8 +82,8 @@ public class MainActivity extends AppCompatActivity {
         BtnEventLoad();
         textView.setText(String.valueOf(sharedPreferences.getInt("money",0)));
 
-        imageView.setImageResource(sharedPreferences.getInt("ch_Img", R.drawable.ic_launcher_foreground));
-        Glide.with(this).load(Return_ImgId(sharedPreferences.getInt("Character", R.drawable.ic_launcher_foreground))).into(imageView);
+        imageView.setImageResource(sharedPreferences.getInt("Character", R.drawable.ic_launcher_foreground));
+        Glide.with(this).load(sharedPreferences.getInt("Character", R.drawable.ic_launcher_foreground)).into(imageView);
 
         money.setDaemon(true);
         money.start();
@@ -226,5 +228,36 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         money.interrupt();
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("종료");
+        builder.setMessage("종료하시겠습니까?");
+        builder.setNeutralButton("취소", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                return;
+            }
+        });
+        builder.setNegativeButton("홈으로", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent intent = new Intent(getApplicationContext(),First_Layout.class);
+                money.interrupt();
+                startActivity(intent);
+                finish();
+            }
+        });
+        builder.setPositiveButton("종료", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                finishAffinity();
+            }
+        });
+
+        builder.show();
     }
 }
