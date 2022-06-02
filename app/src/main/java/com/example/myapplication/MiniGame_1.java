@@ -27,6 +27,7 @@ public class MiniGame_1 extends AppCompatActivity {
     Button btn;
     ImageView[] imageView = new ImageView[6];
     int[] RandomImg = {R.drawable.card_1,R.drawable.card_2,R.drawable.card_3,R.drawable.card_d};
+    int[] Ch_Img = new int[6];
     //MiniGame_card
     Random random = new Random();
     @Override
@@ -40,7 +41,12 @@ public class MiniGame_1 extends AppCompatActivity {
 
     }
     //onCreate end
-
+    private int[] Return_RandImg(int[] i){
+        for(int a=0;a<i.length;a++){
+            i[a] = RandomImg[random.nextInt(3)];
+        }
+        return i;
+    }
     private void qr(){
         sharedPreferences = getSharedPreferences("MiniGame",Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
@@ -73,7 +79,7 @@ public class MiniGame_1 extends AppCompatActivity {
                 switch (view.getId()){
                     case R.id.MiniGame_card1:
                         if(view.getId() == Ch_card){
-                            imageView[0].setImageResource(R.drawable.card_d);
+                            imageView[0].setImageResource(RandomImg[random.nextInt(3)]);
                             Ch_card = 0;
                             Ch_card2 = R.drawable.card_d;
                             break;
@@ -85,12 +91,10 @@ public class MiniGame_1 extends AppCompatActivity {
                     case R.id.MiniGame_card2:
                         if (view.getId() != Ch_card && Ch_card2 == R.drawable.card_1){
                             imageView[1].setImageResource(R.drawable.card_1);
-                            Toast.makeText(getApplicationContext(),"ok",Toast.LENGTH_SHORT).show();
                             Ch_card2 = R.drawable.card_d;
                             Ch_card = view.getId();
                             break;
                         }else if(view.getId() == Ch_card && Ch_card == Ch_card2){
-                            Toast.makeText(getApplicationContext(),"ok2",Toast.LENGTH_SHORT).show();
                             break;
                         }
                         if(view.getId() == Ch_card){
