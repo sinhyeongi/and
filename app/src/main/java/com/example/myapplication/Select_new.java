@@ -69,8 +69,11 @@ public class Select_new extends AppCompatActivity {
 
     }
     public void First_setting(){
-        editor.putInt("Level",1);
-        editor.putInt("money",0);
+        editor.putInt("money", 0);
+        editor.putInt("Level", 0);
+        editor.putInt("Character", 0);
+        editor.putInt("HP",100);
+        editor.putInt("HP_btn",1);
         editor.commit();
     }
 }

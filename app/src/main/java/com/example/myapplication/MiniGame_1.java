@@ -3,8 +3,11 @@ package com.example.myapplication;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -35,9 +38,10 @@ public class MiniGame_1 extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.minigame_1);
-        qr();click();
+        qr();
         Ch_Img = Return_RandImg(RandomImg);
         clear = 0;
+        click();
 
     }
     //onCreate end
@@ -46,17 +50,16 @@ public class MiniGame_1 extends AppCompatActivity {
         int r =  random.nextInt(1);
         int num = (card.length/2)-1;
 
-        Log.v("r:",""+r);
         for(int a = 0; a<card.length/2;a++){
             card[a] = random.nextInt(i.length-1);
-            Log.v("card["+a+"]",""+card[a]);
+
 
         }
         if (r == 0)
         {
             for (int a = card.length/2; a< card.length; a++){
                 card[a] = card[num--];
-                Log.v("card["+a+"]",""+card[a]);
+
             }
 
         }else
@@ -64,7 +67,7 @@ public class MiniGame_1 extends AppCompatActivity {
             num = 0;
             for (int a = card.length/2; a< card.length; a++){
                 card[a] = card[num++];
-                Log.v("card["+a+"]",""+card[a]);
+
             }
 
         }
@@ -96,134 +99,53 @@ public class MiniGame_1 extends AppCompatActivity {
             }
         };
         View.OnTouchListener onTouchListener = new View.OnTouchListener() {
-            int Ch_card = 0,Ch_card2 = 0,Ch_ch = 0;
-            int i = 0;
+            int i =0, i2;
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 switch (view.getId()){
                     case R.id.MiniGame_card1:
-                        Ch_ch = Ch_card;
-                        Ch_card = R.id.MiniGame_card1;
-                        Ch_card2 = RandomImg[Ch_Img[0]];
-                        if(view.getId() == Ch_ch){
-                            imageView[0].setImageResource(R.drawable.card_d);
-                            Ch_card = 0;
-                            Ch_card2 = R.drawable.card_d;
-                            break;
-                        }
-                        if (Ch_card != R.id.MiniGame_card1 && RandomImg[Ch_Img[0]] == Ch_card2){
-                            imageView[0].setVisibility(View.INVISIBLE);
-                            ToGone(Ch_card);
-                            Toast.makeText(getApplicationContext(),"정답",Toast.LENGTH_SHORT).show();
-                            Ch_card = 0;
-                            Ch_card2 = 0;
-                        }
-                        if (Ch_ch != R.id.MiniGame_card1 && Ch_card2 != RandomImg[Ch_Img[0]]){
-                            imageView[0].setImageResource(R.drawable.card_d);
-                        }
-
-                        imageView[0].setImageResource(RandomImg[Ch_Img[0]]);
+                        i2 = 0;
+                        imageView[i2].setImageResource(R.drawable.card_d);
+                        i += 1;
                         break;
                     case R.id.MiniGame_card2:
-                        Ch_ch = Ch_card;
-                        Ch_card = R.id.MiniGame_card2;
-                        Ch_card2 = RandomImg[Ch_Img[1]];
-                        if(Ch_card == R.id.MiniGame_card2){
-                            imageView[1].setImageResource(R.drawable.card_d);
-                            Ch_card = 0;
-                            Ch_card2 = R.drawable.card_d;
-                            break;
-                        }
-                        if (Ch_card != R.id.MiniGame_card2 && RandomImg[Ch_Img[1]] == Ch_card2){
-                            imageView[1].setVisibility(View.INVISIBLE);
-                            ToGone(Ch_card);
-                            Toast.makeText(getApplicationContext(),"정답",Toast.LENGTH_SHORT).show();
-                            Ch_card = 0;
-                            Ch_card2 = 0;
-                        }
-                        if (Ch_ch != R.id.MiniGame_card1 && Ch_card2 != RandomImg[Ch_Img[0]]){
-                            imageView[1].setImageResource(R.drawable.card_d);
-                        }
-
-                        imageView[1].setImageResource(RandomImg[Ch_Img[1]]);
+                        i2 = 1;
+                        imageView[i2].setImageResource(R.drawable.card_d);
+                        i += 1;
                         break;
                     case R.id.MiniGame_card3:
-                        if(Ch_card == R.id.MiniGame_card3){
-                            imageView[2].setImageResource(R.drawable.card_d);
-                            Ch_card = 0;
-                            Ch_card2 = R.drawable.card_d;
-                            break;
-                        }
-                        if (Ch_card != R.id.MiniGame_card3 && RandomImg[Ch_Img[2]] == Ch_card2){
-                            imageView[2].setVisibility(View.INVISIBLE);
-                            ToGone(Ch_card);
-                            Toast.makeText(getApplicationContext(),"정답",Toast.LENGTH_SHORT).show();
-                            Ch_card = 0;
-                            Ch_card2 = 0;
-                        }
-                        Ch_card = R.id.MiniGame_card3;
-                        Ch_card2 = RandomImg[Ch_Img[2]];
-                        imageView[2].setImageResource(RandomImg[Ch_Img[2]]);
+                        i2 = 2;
+                        imageView[i2].setImageResource(R.drawable.card_d);
+                        i += 1;
                         break;
                     case R.id.MiniGame_card4:
-                        if(Ch_card == R.id.MiniGame_card4){
-                            imageView[3].setImageResource(R.drawable.card_d);
-                            Ch_card = 0;
-                            Ch_card2 = R.drawable.card_d;
-                            break;
-                        }
-                        if (Ch_card != R.id.MiniGame_card4 && RandomImg[Ch_Img[3]] == Ch_card2){
-                            imageView[3].setVisibility(View.INVISIBLE);
-                            ToGone(Ch_card);
-                            Toast.makeText(getApplicationContext(),"정답",Toast.LENGTH_SHORT).show();
-                            Ch_card = 0;
-                            Ch_card2 = 0;
-                        }
-                        Ch_card = R.id.MiniGame_card4;
-                        Ch_card2 = RandomImg[Ch_Img[3]];
-                        imageView[3].setImageResource(RandomImg[Ch_Img[3]]);
+                        i2 = 3;
+                        imageView[i2].setImageResource(R.drawable.card_d);
+                        i += 1;
                         break;
                     case R.id.MiniGame_card5:
-                        if(Ch_card == R.id.MiniGame_card5){
-                            imageView[4].setImageResource(R.drawable.card_d);
-                            Ch_card = 0;
-                            Ch_card2 = R.drawable.card_d;
-                            break;
-                        }
-                        if (Ch_card != R.id.MiniGame_card5 && RandomImg[Ch_Img[4]] == Ch_card2){
-                            imageView[4].setVisibility(View.INVISIBLE);
-                            ToGone(Ch_card);
-                            Toast.makeText(getApplicationContext(),"정답",Toast.LENGTH_SHORT).show();
-                            Ch_card = 0;
-                            Ch_card2 = 0;
-                        }
-                        Ch_card = R.id.MiniGame_card5;
-                        Ch_card2 = RandomImg[Ch_Img[4]];
-                        imageView[4].setImageResource(RandomImg[Ch_Img[4]]);
+                        i2 = 4;
+                        imageView[i2].setImageResource(R.drawable.card_d);
+                        i += 1;
                         break;
                     case R.id.MiniGame_card6:
-                        if(Ch_card == R.id.MiniGame_card6){
-                            imageView[5].setImageResource(R.drawable.card_d);
-                            Ch_card = 0;
-                            Ch_card2 = R.drawable.card_d;
-                            break;
-                        }
-                        if (Ch_card != R.id.MiniGame_card4 && RandomImg[Ch_Img[5]] == Ch_card2){
-                            imageView[5].setVisibility(View.INVISIBLE);
-                            ToGone(Ch_card);
-                            Toast.makeText(getApplicationContext(),"정답",Toast.LENGTH_SHORT).show();
-                            Ch_card = 0;
-                            Ch_card2 = 0;
-                        }
-                        Ch_card = R.id.MiniGame_card6;
-                        Ch_card2 = RandomImg[Ch_Img[5]];
-                        imageView[5].setImageResource(RandomImg[Ch_Img[5]]);
+                        i2 = 5;
+                        imageView[i2].setImageResource(R.drawable.card_d);
+                        i += 1;
                         break;
                 }
-                if (clear == 6){
-                    Toast.makeText(getApplicationContext(),"Clear!",Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                    startActivity(intent);
+                if (i == 6){
+                    Toast.makeText(getApplicationContext(),"Clear! money + 25",Toast.LENGTH_SHORT).show();
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                            editor.putInt("money",sharedPreferences.getInt("money",0)+25);
+                            editor.commit();
+                            startActivity(intent);
+                            finish();
+                        }
+                    },1000);
                 }
                 return false;
             }
@@ -232,14 +154,21 @@ public class MiniGame_1 extends AppCompatActivity {
         btn.setOnClickListener(onClickListener);
         for (int i=0;i<6;i++){
             imageView[i].setOnTouchListener(onTouchListener);
-            imageView[i].setImageResource(R.drawable.card_d);
+            imageView[i].setImageResource(RandomImg[Ch_Img[i]]);
         }
     }
-    private void ToGone(int i){
-        ImageView imageView;
-        imageView = (ImageView) findViewById(i);
-        imageView.setVisibility(View.INVISIBLE);
-        clear += 2;
+    private void bitmap(int i,int i2){
+        Drawable drawable, drawable1;
+        drawable = imageView[i].getDrawable();
+        drawable1 = imageView[i2].getDrawable();
+        Bitmap bitmap, bitmap1;
+        bitmap = ((BitmapDrawable)drawable).getBitmap();
+        bitmap1 = ((BitmapDrawable)drawable1).getBitmap();
+        if (bitmap.equals(bitmap1)){
+            imageView[i].setVisibility(View.INVISIBLE);
+            imageView[i2].setVisibility(View.INVISIBLE);
+        }
+
     }
     @Override
     protected void onPause() {
@@ -249,5 +178,12 @@ public class MiniGame_1 extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

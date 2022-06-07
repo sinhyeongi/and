@@ -117,6 +117,8 @@ public class save extends Fragment{
                             editor.putInt("Save1_money", sharedPreferences.getInt("money", 0));
                             editor.putInt("Save1_ch_Img", sharedPreferences.getInt("Character",0));
                             editor.putInt("Save1_difficulty",sharedPreferences.getInt("difficulty",0));
+                            editor.putInt("Save1_HP",sharedPreferences.getInt("HP",0));
+                            editor.putInt("Save1_HP_btn",sharedPreferences.getInt("HP_btn",0));
                             editor.commit();
                             textView1.setText(String.valueOf(sharedPreferences.getInt("Save1_Level", 0)));
                             textView2.setText(String.valueOf(sharedPreferences.getInt("Save1_money", 0)));
@@ -135,6 +137,8 @@ public class save extends Fragment{
                     editor.putInt("Save1_money", sharedPreferences.getInt("money", 0));
                     editor.putInt("Save1_ch_Img", sharedPreferences.getInt("Character",0));
                     editor.putInt("Save1_difficulty",sharedPreferences.getInt("difficulty",0));
+                    editor.putInt("Save1_HP",sharedPreferences.getInt("HP",0));
+                    editor.putInt("Save1_HP_btn",sharedPreferences.getInt("HP_btn",0));
                     editor.commit();
                     textView1.setText(String.valueOf(sharedPreferences.getInt("Save1_Level", 0)));
                     textView2.setText(String.valueOf(sharedPreferences.getInt("Save1_money", 0)));
@@ -157,6 +161,8 @@ public class save extends Fragment{
                             editor.putInt("Save2_money", sharedPreferences.getInt("money", 0));
                             editor.putInt("Save2_ch_Img", sharedPreferences.getInt("Character",0));
                             editor.putInt("Save2_difficulty",sharedPreferences.getInt("difficulty",0));
+                            editor.putInt("Save2_HP",sharedPreferences.getInt("HP",0));
+                            editor.putInt("Save2_HP_btn",sharedPreferences.getInt("HP_btn",0));
                             editor.commit();
                             textView3.setText(String.valueOf(sharedPreferences.getInt("Save2_Level", 0)));
                             textView4.setText(String.valueOf(sharedPreferences.getInt("Save2_money", 0)));
@@ -175,6 +181,8 @@ public class save extends Fragment{
                     editor.putInt("Save2_money", sharedPreferences.getInt("money", 0));
                     editor.putInt("Save2_ch_Img", sharedPreferences.getInt("Character",0));
                     editor.putInt("Save2_difficulty",sharedPreferences.getInt("difficulty",0));
+                    editor.putInt("Save2_HP",sharedPreferences.getInt("HP",0));
+                    editor.putInt("Save2_HP_btn",sharedPreferences.getInt("HP_btn",0));
                     editor.commit();
                     textView3.setText(String.valueOf(sharedPreferences.getInt("Save2_Level", 0)));
                     textView4.setText(String.valueOf(sharedPreferences.getInt("Save2_money", 0)));
@@ -197,6 +205,8 @@ public class save extends Fragment{
                             editor.putInt("Save3_money", sharedPreferences.getInt("money", 0));
                             editor.putInt("Save3_ch_Img", sharedPreferences.getInt("Character",0));
                             editor.putInt("Save3_difficulty",sharedPreferences.getInt("difficulty",0));
+                            editor.putInt("Save3_HP",sharedPreferences.getInt("HP",0));
+                            editor.putInt("Save3_HP_btn",sharedPreferences.getInt("HP_btn",0));
                             editor.commit();
                             textView5.setText(String.valueOf(sharedPreferences.getInt("Save3_Level", 0)));
                             textView6.setText(String.valueOf(sharedPreferences.getInt("Save3_money", 0)));
@@ -215,6 +225,8 @@ public class save extends Fragment{
                     editor.putInt("Save3_money", sharedPreferences.getInt("money", 0));
                     editor.putInt("Save3_ch_Img", sharedPreferences.getInt("Character",0));
                     editor.putInt("Save3_difficulty",sharedPreferences.getInt("difficulty",0));
+                    editor.putInt("Save3_HP",sharedPreferences.getInt("HP",0));
+                    editor.putInt("Save3_HP_btn",sharedPreferences.getInt("HP_btn",0));
                     editor.commit();
                     textView5.setText(String.valueOf(sharedPreferences.getInt("Save3_Level", 0)));
                     textView6.setText(String.valueOf(sharedPreferences.getInt("Save3_money", 0)));

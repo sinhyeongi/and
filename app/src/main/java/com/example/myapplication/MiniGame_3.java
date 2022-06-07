@@ -41,6 +41,8 @@ public class MiniGame_3 extends AppCompatActivity {
                         Delay();
                         break;
                     }
+                    Toast.makeText(getApplicationContext(),"틀렸습니다!",Toast.LENGTH_SHORT).show();
+                    break;
                 case R.id.MiniGame_num1:
                     if (Integer.parseInt(btn[1].getText().toString()) == i){
                         btn[1].setClickable(false);
@@ -49,6 +51,8 @@ public class MiniGame_3 extends AppCompatActivity {
                         Delay();
                         break;
                     }
+                    Toast.makeText(getApplicationContext(),"틀렸습니다!",Toast.LENGTH_SHORT).show();
+                    break;
                 case R.id.MiniGame_num2:
                     if (Integer.parseInt(btn[2].getText().toString()) == i){
                         btn[2].setClickable(false);
@@ -57,6 +61,8 @@ public class MiniGame_3 extends AppCompatActivity {
                         Delay();
                         break;
                     }
+                    Toast.makeText(getApplicationContext(),"틀렸습니다!",Toast.LENGTH_SHORT).show();
+                    break;
                 case R.id.MiniGame_num3:
                     if (Integer.parseInt(btn[3].getText().toString()) == i){
                         btn[3].setClickable(false);
@@ -65,6 +71,8 @@ public class MiniGame_3 extends AppCompatActivity {
                         Delay();
                         break;
                     }
+                    Toast.makeText(getApplicationContext(),"틀렸습니다!",Toast.LENGTH_SHORT).show();
+                    break;
                 case R.id.MiniGame_num4:
                     if (Integer.parseInt(btn[4].getText().toString()) == i){
                         btn[4].setClickable(false);
@@ -73,6 +81,8 @@ public class MiniGame_3 extends AppCompatActivity {
                         Delay();
                         break;
                     }
+                    Toast.makeText(getApplicationContext(),"틀렸습니다!",Toast.LENGTH_SHORT).show();
+                    break;
                 case R.id.MiniGame_num5:
                     if (Integer.parseInt(btn[5].getText().toString()) == i){
                         btn[5].setClickable(false);
@@ -81,6 +91,8 @@ public class MiniGame_3 extends AppCompatActivity {
                         Delay();
                         break;
                     }
+                    Toast.makeText(getApplicationContext(),"틀렸습니다!",Toast.LENGTH_SHORT).show();
+                    break;
                 case R.id.MiniGame_num6:
                     if (Integer.parseInt(btn[6].getText().toString()) == i){
                         btn[6].setClickable(false);
@@ -89,9 +101,6 @@ public class MiniGame_3 extends AppCompatActivity {
                         Delay();
                         break;
                     }
-                case R.id.MiniGame_num7:
-                case R.id.MiniGame_num8:
-                case R.id.MiniGame_num9:
                     Toast.makeText(getApplicationContext(),"틀렸습니다!",Toast.LENGTH_SHORT).show();
                     break;
             }
@@ -117,5 +126,20 @@ public class MiniGame_3 extends AppCompatActivity {
         },3000);
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }

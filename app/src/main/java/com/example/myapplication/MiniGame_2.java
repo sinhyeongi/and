@@ -32,6 +32,14 @@ public class MiniGame_2 extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("main",MODE_PRIVATE);
         editor = sharedPreferences.edit();
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     View.OnClickListener onClickListener = new View.OnClickListener() {
         Intent intent;
         int money = 0,money2 = 0;

@@ -52,10 +52,15 @@ public class MainActivity extends AppCompatActivity {
                     Q_L();
                     runOnUiThread(new Runnable()
                     {
+                        SharedPreferences sharedPreferences = getSharedPreferences("main",MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
                         @Override
                         public void run() {
+                            textView.setText(String.valueOf(sharedPreferences.getInt("money",0)));
                             ch = Integer.parseInt(textView.getText().toString()) + 1;
                             textView.setText(String.valueOf(ch));
+                            editor.putInt("money",ch);
+                            editor.commit();
                         }
                     });
                     Thread.sleep(1000);
@@ -147,7 +152,8 @@ public class MainActivity extends AppCompatActivity {
             switch (view.getId()){
                 case R.id.main_btn:
                     mimi.setClickable(false);
-                    a = 2;
+                    a = random.nextInt(3);
+                    Log.v("a :",""+a);
                     switch (a){
                         case 0:
                             btn_save();

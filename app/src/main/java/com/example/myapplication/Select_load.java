@@ -54,6 +54,8 @@ public class Select_load extends AppCompatActivity {
                         editor.putInt("money", sharedPreferences.getInt("Save1_money", 0));
                         editor.putInt("Level", sharedPreferences.getInt("Save1_Level", 0));
                         editor.putInt("Character", sharedPreferences.getInt("Save1_ch_Img", 0));
+                        editor.putInt("HP",sharedPreferences.getInt("Save1_HP",100));
+                        editor.putInt("HP_btn",sharedPreferences.getInt("Save1_HP_btn",1));
                         editor.commit();
 
                         ChangeHome(MainActivity.class);
@@ -64,6 +66,8 @@ public class Select_load extends AppCompatActivity {
                         editor.putInt("money", sharedPreferences.getInt("Save2_money", 0));
                         editor.putInt("Level", sharedPreferences.getInt("Save2_Level", 0));
                         editor.putInt("Character", sharedPreferences.getInt("Save2_ch_Img", 0));
+                        editor.putInt("HP",sharedPreferences.getInt("Save2_HP",100));
+                        editor.putInt("HP_btn",sharedPreferences.getInt("Save2_HP_btn",1));
                         editor.commit();
 
                         ChangeHome(MainActivity.class);
@@ -74,6 +78,8 @@ public class Select_load extends AppCompatActivity {
                         editor.putInt("money", sharedPreferences.getInt("Save3_money", 0));
                         editor.putInt("Level", sharedPreferences.getInt("Save3_Level", 0));
                         editor.putInt("Character", sharedPreferences.getInt("Save3_ch_Img", 0));
+                        editor.putInt("HP",sharedPreferences.getInt("Save3_HP",100));
+                        editor.putInt("HP_btn",sharedPreferences.getInt("Save3_HP_btn",1));
                         editor.commit();
                         ChangeHome(MainActivity.class);
                     }

@@ -34,6 +34,7 @@
             android:text="1"
             app:layout_constraintLeft_toRightOf="@+id/getHP"
             app:layout_constraintTop_toTopOf="@+id/getHP"
-            android:layout_marginLeft="30dp"/>
+            android:layout_marginLeft="30dp"
+            android:id="@+id/HP_btn"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
