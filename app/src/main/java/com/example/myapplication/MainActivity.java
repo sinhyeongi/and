@@ -146,26 +146,29 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View view) {
             switch (view.getId()){
                 case R.id.main_btn:
-                    a = random.nextInt(2);
+                    mimi.setClickable(false);
+                    a = 2;
                     switch (a){
                         case 0:
                             btn_save();
                             ChangeHome(MiniGame_1.class);
                             break;
                         case 1:
-                            Toast.makeText(getApplicationContext(),"22",Toast.LENGTH_SHORT).show();
+                            ChangeHome(MiniGame_2.class);
                             break;
                         case 2:
-                            Toast.makeText(getApplicationContext(),"33",Toast.LENGTH_SHORT).show();
+                            ChangeHome(MiniGame_3.class);
                             break;
                         default:
                             Toast.makeText(getApplicationContext(),a,Toast.LENGTH_SHORT).show();
                             break;
                     }
-                    return;
+                    break;
                 case R.id.btn_raid:
+                    Toast.makeText(MainActivity.this, "준비중", Toast.LENGTH_SHORT).show();
                     return;
             }
+            mimi.setClickable(true);
         }
     };
     //intent 화면 전환
