@@ -17,7 +17,7 @@ public class MiniGame_3 extends AppCompatActivity {
     Button[] btn = new Button[10];
     Random random = new Random();
     ImageView imageView;
-    int i = random.nextInt(3);
+    int i = random.nextInt(6);
     Toast toast;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -66,8 +66,29 @@ public class MiniGame_3 extends AppCompatActivity {
                         break;
                     }
                 case R.id.MiniGame_num4:
+                    if (Integer.parseInt(btn[4].getText().toString()) == i){
+                        btn[4].setClickable(false);
+                        Toast.makeText(getApplicationContext(),"정답입니다!",Toast.LENGTH_SHORT).show();
+                        imageView.setImageResource(R.drawable.card_4);
+                        Delay();
+                        break;
+                    }
                 case R.id.MiniGame_num5:
+                    if (Integer.parseInt(btn[5].getText().toString()) == i){
+                        btn[5].setClickable(false);
+                        Toast.makeText(getApplicationContext(),"정답입니다!",Toast.LENGTH_SHORT).show();
+                        imageView.setImageResource(R.drawable.card_5);
+                        Delay();
+                        break;
+                    }
                 case R.id.MiniGame_num6:
+                    if (Integer.parseInt(btn[6].getText().toString()) == i){
+                        btn[6].setClickable(false);
+                        Toast.makeText(getApplicationContext(),"정답입니다!",Toast.LENGTH_SHORT).show();
+                        imageView.setImageResource(R.drawable.card_6);
+                        Delay();
+                        break;
+                    }
                 case R.id.MiniGame_num7:
                 case R.id.MiniGame_num8:
                 case R.id.MiniGame_num9:
