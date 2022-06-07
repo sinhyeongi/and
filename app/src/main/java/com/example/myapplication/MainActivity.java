@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View view) {
             switch (view.getId()){
                 case R.id.main_btn:
-                    a = random.nextInt(2);
+                    a = 0;
                     switch (a){
                         case 0:
                             btn_save();
