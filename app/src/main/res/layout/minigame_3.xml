@@ -69,35 +69,12 @@
         app:layout_constraintTop_toTopOf="@id/MiniGame_num5"
         app:layout_constraintLeft_toRightOf="@id/MiniGame_num5"
         android:layout_marginLeft="40dp"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/MiniGame_num4"
-        app:layout_constraintLeft_toLeftOf="@id/MiniGame_num4"
-        android:layout_marginTop="40dp"
-        android:text="7"
-        android:id="@+id/MiniGame_num7"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/MiniGame_num8"
-        android:text="8"
-        app:layout_constraintTop_toTopOf="@id/MiniGame_num7"
-        app:layout_constraintLeft_toRightOf="@id/MiniGame_num7"
-        android:layout_marginLeft="40dp"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/MiniGame_num9"
-        android:text="9"
-        app:layout_constraintTop_toTopOf="@id/MiniGame_num8"
-        app:layout_constraintLeft_toRightOf="@id/MiniGame_num8"
-        android:layout_marginLeft="40dp"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/MiniGame_num8"
-        app:layout_constraintLeft_toLeftOf="@id/MiniGame_num8"
+        app:layout_constraintTop_toBottomOf="@id/MiniGame_num5"
+        app:layout_constraintLeft_toLeftOf="@id/MiniGame_num5"
         android:layout_marginTop="40dp"
         android:text="0"
         android:id="@+id/MiniGame_num0"/>

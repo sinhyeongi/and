@@ -109,7 +109,7 @@ public class MiniGame_3 extends AppCompatActivity {
     //End onCreate
     private void qq(){
         imageView = (ImageView) findViewById(R.id.MiniGame3_img);
-        for (int a = 0; a<10;a++){
+        for (int a = 0; a<7;a++){
             btn[a] = findViewById(getResources().getIdentifier("MiniGame_num"+a,"id",getPackageName()));
             btn[a].setOnClickListener(onClickListener);
         }
