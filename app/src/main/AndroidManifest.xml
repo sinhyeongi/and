@@ -24,6 +24,8 @@
         <activity android:name=".Select_new"></activity>
         <activity android:name=".Select_Characters"></activity>
         <activity android:name=".MiniGame_1"></activity>
+        <activity android:name=".MiniGame_2"></activity>
+        <activity android:name=".MiniGame_3"></activity>
     </application>
 
 </manifest>
