@@ -77,15 +77,18 @@ public class save extends Fragment{
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("main", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         View view = inflater.inflate(R.layout.fragment_save,null);
-        TextView textView1,textView2,textView3,textView4,textView5,textView6;
+        TextView textView1,textView2,textView3,textView4,textView5,textView6,textView7,textView8,textView9;
 
         Button btn1,btn2,btn3;
         textView1 = (TextView) view.findViewById(R.id.level1);
         textView2 = (TextView) view.findViewById(R.id.money1);
+        textView7 = (TextView) view.findViewById(R.id.Save1_difi);
         textView3 = (TextView) view.findViewById(R.id.level2);
         textView4 = (TextView) view.findViewById(R.id.money2);
+        textView8 = (TextView) view.findViewById(R.id.Save2_difi);
         textView5 = (TextView) view.findViewById(R.id.level3);
         textView6 = (TextView) view.findViewById(R.id.money3);
+        textView9 = (TextView) view.findViewById(R.id.Save3_difi);
         btn1 = (Button) view.findViewById(R.id.btn_save1);
         btn2 = (Button) view.findViewById(R.id.btn_save2);
         btn3 = (Button) view.findViewById(R.id.btn_save3);
@@ -93,14 +96,17 @@ public class save extends Fragment{
         if (sharedPreferences.getInt("Save1_Level",0) > 0){
             textView1.setText(String.valueOf(sharedPreferences.getInt("Save1_Level",0)));
             textView2.setText(String.valueOf(sharedPreferences.getInt("Save1_money",0)));
+            textView7.setText(Get_dificul(sharedPreferences.getInt("Save1_difficulty",0)));
         }
         if (sharedPreferences.getInt("Save2_Level",0) > 0){
             textView3.setText(String.valueOf(sharedPreferences.getInt("Save2_Level",0)));
             textView4.setText(String.valueOf(sharedPreferences.getInt("Save2_money",0)));
+            textView8.setText(Get_dificul(sharedPreferences.getInt("Save2_difficulty",0)));
         }
         if (sharedPreferences.getInt("Save3_Level",0) > 0){
             textView5.setText(String.valueOf(sharedPreferences.getInt("Save3_Level",0)));
             textView6.setText(String.valueOf(sharedPreferences.getInt("Save3_money",0)));
+            textView9.setText(Get_dificul(sharedPreferences.getInt("Save3_difficulty",0)));
         }
         btn1.setOnClickListener(new View.OnClickListener() {
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
@@ -237,5 +243,16 @@ public class save extends Fragment{
 
         return view;
     }
-
+    public String Get_dificul(int i){
+        switch (i){
+            case 0:
+                return "쉬움";
+            case 1:
+                return "보통";
+            case 2:
+                return "어려움";
+            default:
+                return "err";
+        }
+    }
 }

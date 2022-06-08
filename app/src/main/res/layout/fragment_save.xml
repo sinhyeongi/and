@@ -98,6 +98,30 @@
             android:layout_marginLeft="40dp"
             android:layout_marginTop="10dp"
             android:id="@+id/save1_money"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toLeftOf="@id/num1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/num1"
+            app:layout_constraintBottom_toBottomOf="@id/num1"
+            android:id="@+id/Save1_difi"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toLeftOf="@id/num2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/num2"
+            app:layout_constraintBottom_toBottomOf="@id/num2"
+            android:id="@+id/Save2_difi"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintRight_toLeftOf="@id/num3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@id/num3"
+            app:layout_constraintBottom_toBottomOf="@id/num3"
+            android:id="@+id/Save3_difi"/>
         //2번
         <TextView
             android:layout_width="wrap_content"

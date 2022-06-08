@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Select_load extends AppCompatActivity {
     Button btn1,btn2,btn3;
-    TextView textView1,textView2,textView3,textView4,textView5,textView6;
+    TextView textView1,textView2,textView3,textView4,textView5,textView6,textView7,textView8,textView9;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     @Override
@@ -28,14 +28,17 @@ public class Select_load extends AppCompatActivity {
         if (sharedPreferences.getInt("Save1_Level",0) > 0){
             textView1.setText(String.valueOf(sharedPreferences.getInt("Save1_Level",0)));
             textView2.setText(String.valueOf(sharedPreferences.getInt("Save1_money",0)));
+            textView7.setText(Get_dificul(sharedPreferences.getInt("Save1_difficulty",0)));
         }
         if (sharedPreferences.getInt("Save2_Level",0) > 0){
             textView3.setText(String.valueOf(sharedPreferences.getInt("Save2_Level",0)));
             textView4.setText(String.valueOf(sharedPreferences.getInt("Save2_money",0)));
+            textView7.setText(Get_dificul(sharedPreferences.getInt("Save2_difficulty",0)));
         }
         if (sharedPreferences.getInt("Save3_Level",0) > 0){
             textView5.setText(String.valueOf(sharedPreferences.getInt("Save3_Level",0)));
             textView6.setText(String.valueOf(sharedPreferences.getInt("Save3_money",0)));
+            textView7.setText(Get_dificul(sharedPreferences.getInt("Save3_difficulty",0)));
         }
 
         btn1.setOnClickListener(onClickListener);
@@ -56,6 +59,7 @@ public class Select_load extends AppCompatActivity {
                         editor.putInt("Character", sharedPreferences.getInt("Save1_ch_Img", 0));
                         editor.putInt("HP",sharedPreferences.getInt("Save1_HP",100));
                         editor.putInt("HP_btn",sharedPreferences.getInt("Save1_HP_btn",1));
+                        editor.putInt("difficulty",sharedPreferences.getInt("Save1_difficulty",-1));
                         editor.commit();
 
                         ChangeHome(MainActivity.class);
@@ -68,6 +72,7 @@ public class Select_load extends AppCompatActivity {
                         editor.putInt("Character", sharedPreferences.getInt("Save2_ch_Img", 0));
                         editor.putInt("HP",sharedPreferences.getInt("Save2_HP",100));
                         editor.putInt("HP_btn",sharedPreferences.getInt("Save2_HP_btn",1));
+                        editor.putInt("difficulty",sharedPreferences.getInt("Save2_difficulty",-1));
                         editor.commit();
 
                         ChangeHome(MainActivity.class);
@@ -80,6 +85,7 @@ public class Select_load extends AppCompatActivity {
                         editor.putInt("Character", sharedPreferences.getInt("Save3_ch_Img", 0));
                         editor.putInt("HP",sharedPreferences.getInt("Save3_HP",100));
                         editor.putInt("HP_btn",sharedPreferences.getInt("Save3_HP_btn",1));
+                        editor.putInt("difficulty",sharedPreferences.getInt("Save3_difficulty",-1));
                         editor.commit();
                         ChangeHome(MainActivity.class);
                     }
@@ -102,6 +108,20 @@ public class Select_load extends AppCompatActivity {
         textView4 = (TextView) findViewById(R.id.money2);
         textView5 = (TextView) findViewById(R.id.level3);
         textView6 = (TextView) findViewById(R.id.money3);
-
+        textView7 = (TextView) findViewById(R.id.Save1_difi);
+        textView8 = (TextView) findViewById(R.id.Save2_difi);
+        textView9 = (TextView) findViewById(R.id.Save3_difi);
+    }
+    public String Get_dificul(int i){
+        switch (i){
+            case 0:
+                return "쉬움";
+            case 1:
+                return "보통";
+            case 2:
+                return "어려움";
+            default:
+                return "err";
+        }
     }
 }
