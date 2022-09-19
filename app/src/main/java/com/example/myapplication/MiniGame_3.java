@@ -35,73 +35,128 @@ public class MiniGame_3 extends AppCompatActivity {
                 case R.id.MiniGame_num0:
                     if (Integer.parseInt(btn[0].getText().toString()) == i){
                         btn[0].setClickable(false);
-
-                        Toast.makeText(getApplicationContext(),"정답입니다!",Toast.LENGTH_SHORT).show();
+                        if( toast != null ) {
+                            toast.cancel();
+                        }
+                        toast = toast.makeText(getApplicationContext(),"정답입니다!",Toast.LENGTH_SHORT);
+                        toast.show();
                         imageView.setImageResource(R.drawable.card_d);
                         Delay();
                         break;
                     }
-                    Toast.makeText(getApplicationContext(),"틀렸습니다!",Toast.LENGTH_SHORT).show();
+                    if( toast != null ) {
+                        toast.cancel();
+                    }
+                    toast = toast.makeText(getApplicationContext(),"틀렸습니다!",Toast.LENGTH_SHORT);
+                    toast.show();
                     break;
                 case R.id.MiniGame_num1:
                     if (Integer.parseInt(btn[1].getText().toString()) == i){
                         btn[1].setClickable(false);
-                        Toast.makeText(getApplicationContext(),"정답입니다!",Toast.LENGTH_SHORT).show();
+                        if( toast != null ) {
+                            toast.cancel();
+                        }
+                        toast = toast.makeText(getApplicationContext(),"정답입니다!",Toast.LENGTH_SHORT);
+                        toast.show();
                         imageView.setImageResource(R.drawable.card_1);
                         Delay();
                         break;
                     }
-                    Toast.makeText(getApplicationContext(),"틀렸습니다!",Toast.LENGTH_SHORT).show();
+                    if( toast != null ) {
+                        toast.cancel();
+                    }
+                    toast = toast.makeText(getApplicationContext(),"틀렸습니다!",Toast.LENGTH_SHORT);
+                    toast.show();
                     break;
                 case R.id.MiniGame_num2:
                     if (Integer.parseInt(btn[2].getText().toString()) == i){
                         btn[2].setClickable(false);
-                        Toast.makeText(getApplicationContext(),"정답입니다!",Toast.LENGTH_SHORT).show();
+                        if( toast != null ) {
+                            toast.cancel();
+                        }
+                        toast = toast.makeText(getApplicationContext(),"정답입니다!",Toast.LENGTH_SHORT);
+                        toast.show();
                         imageView.setImageResource(R.drawable.card_2);
                         Delay();
                         break;
                     }
-                    Toast.makeText(getApplicationContext(),"틀렸습니다!",Toast.LENGTH_SHORT).show();
+                    if( toast != null ) {
+                        toast.cancel();
+                    }
+                    toast = toast.makeText(getApplicationContext(),"틀렸습니다!",Toast.LENGTH_SHORT);
+                    toast.show();
                     break;
                 case R.id.MiniGame_num3:
                     if (Integer.parseInt(btn[3].getText().toString()) == i){
                         btn[3].setClickable(false);
-                        Toast.makeText(getApplicationContext(),"정답입니다!",Toast.LENGTH_SHORT).show();
+                        if( toast != null ) {
+                            toast.cancel();
+                        }
+                        toast = toast.makeText(getApplicationContext(),"정답입니다!",Toast.LENGTH_SHORT);
+                        toast.show();
                         imageView.setImageResource(R.drawable.card_3);
                         Delay();
                         break;
                     }
-                    Toast.makeText(getApplicationContext(),"틀렸습니다!",Toast.LENGTH_SHORT).show();
+                    if( toast != null ) {
+                        toast.cancel();
+                    }
+                    toast = toast.makeText(getApplicationContext(),"틀렸습니다!",Toast.LENGTH_SHORT);
+                    toast.show();
                     break;
                 case R.id.MiniGame_num4:
                     if (Integer.parseInt(btn[4].getText().toString()) == i){
                         btn[4].setClickable(false);
-                        Toast.makeText(getApplicationContext(),"정답입니다!",Toast.LENGTH_SHORT).show();
+                        if( toast != null ) {
+                            toast.cancel();
+                        }
+                        toast = toast.makeText(getApplicationContext(),"정답입니다!",Toast.LENGTH_SHORT);
+                        toast.show();
                         imageView.setImageResource(R.drawable.card_4);
                         Delay();
                         break;
                     }
-                    Toast.makeText(getApplicationContext(),"틀렸습니다!",Toast.LENGTH_SHORT).show();
+                    if( toast != null ) {
+                        toast.cancel();
+                    }
+                    toast = toast.makeText(getApplicationContext(),"틀렸습니다!",Toast.LENGTH_SHORT);
+                    toast.show();
                     break;
                 case R.id.MiniGame_num5:
                     if (Integer.parseInt(btn[5].getText().toString()) == i){
                         btn[5].setClickable(false);
-                        Toast.makeText(getApplicationContext(),"정답입니다!",Toast.LENGTH_SHORT).show();
+                        if( toast != null ) {
+                            toast.cancel();
+                        }
+                        toast = toast.makeText(getApplicationContext(),"정답입니다!",Toast.LENGTH_SHORT);
+                        toast.show();
                         imageView.setImageResource(R.drawable.card_5);
                         Delay();
                         break;
                     }
-                    Toast.makeText(getApplicationContext(),"틀렸습니다!",Toast.LENGTH_SHORT).show();
+                    if( toast != null ) {
+                        toast.cancel();
+                    }
+                    toast = toast.makeText(getApplicationContext(),"틀렸습니다!",Toast.LENGTH_SHORT);
+                    toast.show();
                     break;
                 case R.id.MiniGame_num6:
                     if (Integer.parseInt(btn[6].getText().toString()) == i){
                         btn[6].setClickable(false);
-                        Toast.makeText(getApplicationContext(),"정답입니다!",Toast.LENGTH_SHORT).show();
+                        if( toast != null ) {
+                            toast.cancel();
+                        }
+                        toast = toast.makeText(getApplicationContext(),"정답입니다!",Toast.LENGTH_SHORT);
+                        toast.show();
                         imageView.setImageResource(R.drawable.card_6);
                         Delay();
                         break;
                     }
-                    Toast.makeText(getApplicationContext(),"틀렸습니다!",Toast.LENGTH_SHORT).show();
+                    if( toast != null ) {
+                        toast.cancel();
+                    }
+                    toast = toast.makeText(getApplicationContext(),"틀렸습니다!",Toast.LENGTH_SHORT);
+                    toast.show();
                     break;
             }
         }

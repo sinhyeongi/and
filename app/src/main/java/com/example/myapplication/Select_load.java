@@ -90,6 +90,7 @@ public class Select_load extends AppCompatActivity {
                         ChangeHome(MainActivity.class);
                     }
                     break;
+
             }
         }
     };
@@ -123,5 +124,12 @@ public class Select_load extends AppCompatActivity {
             default:
                 return "err";
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(getApplicationContext(),First_Select.class);
+        startActivity(intent);
+        finish();
     }
 }

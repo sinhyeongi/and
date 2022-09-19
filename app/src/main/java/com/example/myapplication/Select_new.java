@@ -76,4 +76,11 @@ public class Select_new extends AppCompatActivity {
         editor.putInt("HP_btn",1);
         editor.commit();
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(getApplicationContext(),First_Select.class);
+        startActivity(intent);
+        finish();
+    }
 }

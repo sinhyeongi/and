@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     FragmentManager fragmentManager = getSupportFragmentManager();
     private state frag_state = new state();
     private save frag_save = new save();
+    private state_view state_view= new state_view();
     RelativeLayout relativeLayout;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
@@ -109,6 +110,15 @@ public class MainActivity extends AppCompatActivity {
                     imageView.setVisibility(View.VISIBLE);
                     frag_control = 0;
                     return true;
+                case R.id.state_view:
+                    if(frag_control == 4){
+                        if_transaction();
+                        return false;
+                    }else {
+                        else_transaction(state_view);
+                        frag_control = 4;
+                        return true;
+                    }
                 case R.id.state:
                     if(frag_control == 2){
                         if_transaction();
@@ -224,6 +234,7 @@ public class MainActivity extends AppCompatActivity {
     public void btn_save(){
         editor.putInt("money",Integer.parseInt(textView.getText().toString()));
         editor.putInt("Level",1);
+
         editor.commit();
     }
     @Override

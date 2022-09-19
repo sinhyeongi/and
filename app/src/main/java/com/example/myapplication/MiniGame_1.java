@@ -20,7 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
 /*
-저장 MiniGame
+변경예정
 
 */
 
