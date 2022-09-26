@@ -197,12 +197,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void else_transaction(Fragment fragment){
-        relativeLayout.setVisibility(View.GONE);
-        frameLayout.setVisibility(View.VISIBLE);
-        imageView.setVisibility(View.GONE);
         transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame, fragment);
         transaction.commitAllowingStateLoss();
+        relativeLayout.setVisibility(View.GONE);
+        frameLayout.setVisibility(View.VISIBLE);
+        imageView.setVisibility(View.GONE);
+
     }
     //저장 함수
 
