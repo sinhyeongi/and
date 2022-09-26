@@ -23,7 +23,6 @@ public class MiniGame_3 extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.minigame_3);
-
         qq();
     }
     //OnclickListener
@@ -34,13 +33,13 @@ public class MiniGame_3 extends AppCompatActivity {
             switch (view.getId()){
                 case R.id.MiniGame_num0:
                     if (Integer.parseInt(btn[0].getText().toString()) == i){
-                        btn[0].setClickable(false);
                         if( toast != null ) {
                             toast.cancel();
                         }
+                        end();
+                        imageView.setImageResource(R.drawable.card_d);
                         toast = toast.makeText(getApplicationContext(),"정답입니다!",Toast.LENGTH_SHORT);
                         toast.show();
-                        imageView.setImageResource(R.drawable.card_d);
                         Delay();
                         break;
                     }
@@ -56,9 +55,10 @@ public class MiniGame_3 extends AppCompatActivity {
                         if( toast != null ) {
                             toast.cancel();
                         }
+                        end();
+                        imageView.setImageResource(R.drawable.card_1);
                         toast = toast.makeText(getApplicationContext(),"정답입니다!",Toast.LENGTH_SHORT);
                         toast.show();
-                        imageView.setImageResource(R.drawable.card_1);
                         Delay();
                         break;
                     }
@@ -74,9 +74,10 @@ public class MiniGame_3 extends AppCompatActivity {
                         if( toast != null ) {
                             toast.cancel();
                         }
+                        end();
+                        imageView.setImageResource(R.drawable.card_2);
                         toast = toast.makeText(getApplicationContext(),"정답입니다!",Toast.LENGTH_SHORT);
                         toast.show();
-                        imageView.setImageResource(R.drawable.card_2);
                         Delay();
                         break;
                     }
@@ -92,9 +93,11 @@ public class MiniGame_3 extends AppCompatActivity {
                         if( toast != null ) {
                             toast.cancel();
                         }
+                        end();
+                        imageView.setImageResource(R.drawable.card_3);
                         toast = toast.makeText(getApplicationContext(),"정답입니다!",Toast.LENGTH_SHORT);
                         toast.show();
-                        imageView.setImageResource(R.drawable.card_3);
+
                         Delay();
                         break;
                     }
@@ -110,9 +113,10 @@ public class MiniGame_3 extends AppCompatActivity {
                         if( toast != null ) {
                             toast.cancel();
                         }
+                        end();
+                        imageView.setImageResource(R.drawable.card_4);
                         toast = toast.makeText(getApplicationContext(),"정답입니다!",Toast.LENGTH_SHORT);
                         toast.show();
-                        imageView.setImageResource(R.drawable.card_4);
                         Delay();
                         break;
                     }
@@ -128,9 +132,10 @@ public class MiniGame_3 extends AppCompatActivity {
                         if( toast != null ) {
                             toast.cancel();
                         }
+                        end();
+                        imageView.setImageResource(R.drawable.card_5);
                         toast = toast.makeText(getApplicationContext(),"정답입니다!",Toast.LENGTH_SHORT);
                         toast.show();
-                        imageView.setImageResource(R.drawable.card_5);
                         Delay();
                         break;
                     }
@@ -146,9 +151,10 @@ public class MiniGame_3 extends AppCompatActivity {
                         if( toast != null ) {
                             toast.cancel();
                         }
+                        end();
+                        imageView.setImageResource(R.drawable.card_6);
                         toast = toast.makeText(getApplicationContext(),"정답입니다!",Toast.LENGTH_SHORT);
                         toast.show();
-                        imageView.setImageResource(R.drawable.card_6);
                         Delay();
                         break;
                     }
@@ -164,7 +170,8 @@ public class MiniGame_3 extends AppCompatActivity {
     //End onCreate
     private void qq(){
         imageView = (ImageView) findViewById(R.id.MiniGame3_img);
-        for (int a = 0; a<7;a++){
+        for (int a = 0; a<7;a++)
+        {
             btn[a] = findViewById(getResources().getIdentifier("MiniGame_num"+a,"id",getPackageName()));
             btn[a].setOnClickListener(onClickListener);
         }
@@ -180,7 +187,11 @@ public class MiniGame_3 extends AppCompatActivity {
             }
         },3000);
     }
-
+    private void end(){
+        for(i=0;i<7;i++){
+            btn[i].setClickable(false);
+        }
+    }
     @Override
     protected void onPause() {
         super.onPause();
