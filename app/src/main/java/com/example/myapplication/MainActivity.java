@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,6 +15,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -185,8 +187,16 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                         }
                         break;
+                        //수정 부분
                     case R.id.btn_raid:
-                        Toast.makeText(MainActivity.this, "준비중", Toast.LENGTH_SHORT).show();
+                        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                        builder.setTitle("레이드 선택");
+                        builder.setView(R.layout.raid_select);
+                        builder.setPositiveButton("취소", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {return;}
+                        });
+                        builder.show();
                         return;
                 }
                 mimi.setClickable(true);
