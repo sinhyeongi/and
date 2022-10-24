@@ -13,8 +13,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -44,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
     Random random = new Random();
     ImageView imageView;
     TextView textView;
+    WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
+    View view;
     //스레드
     Thread money = new Thread(new Runnable() {
         int ch = 0;
@@ -87,6 +91,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
+        layoutParams.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+        layoutParams.dimAmount = 0.8f;
+        getWindow().setAttributes(layoutParams);
         Q_L();
         BtnEventLoad();
         textView.setText(String.valueOf(sharedPreferences.getInt("money", 0)));
@@ -142,6 +150,7 @@ public class MainActivity extends AppCompatActivity {
                         return true;
                     }
 
+
             }
             return true;
         }
@@ -170,7 +179,6 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.main_btn:
                         mimi.setClickable(false);
                         a = random.nextInt(3);
-                        Log.v("a :", "" + a);
                         switch (a) {
                             case 0:
                                 btn_save();
@@ -182,6 +190,7 @@ public class MainActivity extends AppCompatActivity {
                             case 2:
                                 ChangeHome(MiniGame_3.class);
                                 break;
+
                             default:
                                 Toast.makeText(getApplicationContext(), a, Toast.LENGTH_SHORT).show();
                                 break;
@@ -189,14 +198,16 @@ public class MainActivity extends AppCompatActivity {
                         break;
                         //수정 부분
                     case R.id.btn_raid:
-                        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                        builder.setTitle("레이드 선택");
-                        builder.setView(R.layout.raid_select);
-                        builder.setPositiveButton("취소", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {return;}
-                        });
-                        builder.show();
+                        layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;
+                        layoutParams.height = WindowManager.LayoutParams.MATCH_PARENT;
+
+                        Dialog dialog = new Dialog(MainActivity.this);
+                        dialog.setTitle("레이드 선택");
+                        layoutParams.copyFrom(dialog.getWindow().getAttributes());
+                        dialog.setContentView(R.layout.raid_select);
+                        dialog.show();
+                        Window window = dialog.getWindow();
+                        window.setAttributes(layoutParams);
                         return;
                 }
                 mimi.setClickable(true);
@@ -244,7 +255,32 @@ public class MainActivity extends AppCompatActivity {
             relativeLayout = (RelativeLayout) findViewById(R.id.relative);
             imageView = (ImageView) findViewById(R.id.ch_Img);
             textView = (TextView) findViewById(R.id.main_money);
+            view = getLayoutInflater().inflate(R.layout.raid_select,null,false);
+            Button[] dia_btn = new Button[3];
+            //수정
+            for (int i =0; i<3;i++){
+                dia_btn[i] = (Button) view.findViewById(getResources().getIdentifier("raid"+(i+1)+"_btn","id",getPackageName()));
+                dia_btn[i].setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        switch (view.getId()){
+                            case R.id.raid1_btn:
+                                ChangeHome(raid1.class);
+                                break;
+                            case R.id.raid2_btn:
+                                ChangeHome(raid2.class);
+                                break;
+                            case R.id.raid3_btn:
+                                ChangeHome(raid3.class);
+                                break;
+                            default:
+                                return;
+                        }
+                        Toast.makeText(getApplicationContext(),"ok",Toast.LENGTH_SHORT).show();
 
+                    }
+                });
+            }
             return;
         }
 
