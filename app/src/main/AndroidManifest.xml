@@ -26,6 +26,10 @@
         <activity android:name=".MiniGame_1"></activity>
         <activity android:name=".MiniGame_2"></activity>
         <activity android:name=".MiniGame_3"></activity>
+        <activity android:name=".raid_select"></activity>
+        <activity android:name=".raid1"></activity>
+        <activity android:name=".raid2"></activity>
+        <activity android:name=".raid3"></activity>
     </application>
 
 </manifest>
