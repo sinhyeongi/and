@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -198,17 +199,18 @@ public class MainActivity extends AppCompatActivity {
                         break;
                         //수정 부분
                     case R.id.btn_raid:
+                        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                        builder.setTitle("레이드 선택!");
+                        Dialog dialog = builder.create();
+                        layoutParams = new WindowManager.LayoutParams();
+                        layoutParams.copyFrom(dialog.getWindow().getAttributes());
                         layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;
                         layoutParams.height = WindowManager.LayoutParams.MATCH_PARENT;
-
-                        Dialog dialog = new Dialog(MainActivity.this);
-                        dialog.setTitle("레이드 선택");
-                        layoutParams.copyFrom(dialog.getWindow().getAttributes());
                         dialog.setContentView(R.layout.raid_select);
                         dialog.show();
                         Window window = dialog.getWindow();
                         window.setAttributes(layoutParams);
-                        return;
+                        break;
                 }
                 mimi.setClickable(true);
             }
@@ -256,31 +258,8 @@ public class MainActivity extends AppCompatActivity {
             imageView = (ImageView) findViewById(R.id.ch_Img);
             textView = (TextView) findViewById(R.id.main_money);
             view = getLayoutInflater().inflate(R.layout.raid_select,null,false);
-            Button[] dia_btn = new Button[3];
-            //수정
-            for (int i =0; i<3;i++){
-                dia_btn[i] = (Button) view.findViewById(getResources().getIdentifier("raid"+(i+1)+"_btn","id",getPackageName()));
-                dia_btn[i].setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        switch (view.getId()){
-                            case R.id.raid1_btn:
-                                ChangeHome(raid1.class);
-                                break;
-                            case R.id.raid2_btn:
-                                ChangeHome(raid2.class);
-                                break;
-                            case R.id.raid3_btn:
-                                ChangeHome(raid3.class);
-                                break;
-                            default:
-                                return;
-                        }
-                        Toast.makeText(getApplicationContext(),"ok",Toast.LENGTH_SHORT).show();
 
-                    }
-                });
-            }
+
             return;
         }
 

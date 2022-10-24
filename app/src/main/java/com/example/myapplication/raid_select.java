@@ -18,6 +18,7 @@ public class raid_select extends AppCompatActivity {
 
     }
     public void Q_l(){
+
         Button button[] = new Button[3];
         for(int i=0; i<3;i++){
             button[i] = findViewById(getResources().getIdentifier("raid"+(i+1)+"_btn","id",getPackageName()));
