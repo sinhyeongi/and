@@ -36,7 +36,6 @@ public class raid1 extends AppCompatActivity {
         switch (event.getAction()){
             case MotionEvent.ACTION_UP:
                 if(i == 0){
-
                 }
                 seekBar.setProgress(--i);
 
