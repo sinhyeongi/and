@@ -36,7 +36,8 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintHorizontal_bias="0.85"
-            android:id="@+id/raid1_btn"/>
+            android:id="@+id/raid1_btn"
+            android:onClick="OnClick"/>
     <!-- 1번 끝 -->
 
     <!-- 2번 시작 -->
