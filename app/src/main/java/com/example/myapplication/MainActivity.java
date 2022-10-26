@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
     View view;
+    Context context = this;
     //스레드
     Thread money = new Thread(new Runnable() {
         int ch = 0;
@@ -197,15 +198,8 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case R.id.btn_raid:
-                        Dialog dialog = new Dialog(MainActivity.this);
-                        dialog.setContentView(R.layout.raid_select);
-                        layoutParams = new WindowManager.LayoutParams();
-                        layoutParams.copyFrom(dialog.getWindow().getAttributes());
-                        layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;
-                        layoutParams.height = WindowManager.LayoutParams.MATCH_PARENT;
-                        dialog.show();
-                        Window window = dialog.getWindow();
-                        window.setAttributes(layoutParams);
+                        Custom_Dialog custom_dialog = new Custom_Dialog();
+                        custom_dialog.Dialog(context);
                         break;
                 }
                 mimi.setClickable(true);
