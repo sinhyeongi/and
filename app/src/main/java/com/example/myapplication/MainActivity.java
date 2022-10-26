@@ -206,7 +206,6 @@ public class MainActivity extends AppCompatActivity {
                         dialog.show();
                         Window window = dialog.getWindow();
                         window.setAttributes(layoutParams);
-
                         break;
                 }
                 mimi.setClickable(true);
@@ -322,6 +321,7 @@ public class MainActivity extends AppCompatActivity {
         }
         //raid_select.xml 버튼 이벤트
         public void OnClick(View v){
+
 
             switch (v.getId()){
                 case R.id.raid1_btn:
