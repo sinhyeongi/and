@@ -29,6 +29,8 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import org.w3c.dom.Text;
+
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -101,17 +103,15 @@ public class MainActivity extends AppCompatActivity {
         textView.setText(String.valueOf(sharedPreferences.getInt("money", 0)));
         imageView.setImageResource(sharedPreferences.getInt("Character", R.drawable.ic_launcher_foreground));
         Glide.with(this).load(sharedPreferences.getInt("Character", R.drawable.ic_launcher_foreground)).into(imageView);
-
         money.setDaemon(true);
         money.start();
         bottomNavigationView.setOnNavigationItemSelectedListener(new ItemSelectedListener());
         mimi.setOnClickListener(onClickListener);
-
     }
 
     //main end
 
-    //bottom click event
+    //플래그먼트 버튼 이벤트
     class ItemSelectedListener implements BottomNavigationView.OnNavigationItemSelectedListener {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -196,7 +196,6 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                         }
                         break;
-                        //수정 부분
                     case R.id.btn_raid:
 
                         Dialog dialog = new Dialog(MainActivity.this);
@@ -208,6 +207,7 @@ public class MainActivity extends AppCompatActivity {
                         dialog.show();
                         Window window = dialog.getWindow();
                         window.setAttributes(layoutParams);
+
                         break;
                 }
                 mimi.setClickable(true);
@@ -220,19 +220,19 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-
+        
         private void BtnEventLoad() {
             raid.setOnClickListener(onClickListener);
             mimi.setOnClickListener(onClickListener);
         }
-
+        //플래그먼트 -> 플래그먼트
         private void if_transaction() {
             relativeLayout.setVisibility(View.VISIBLE);
             frameLayout.setVisibility(View.GONE);
             imageView.setVisibility(View.VISIBLE);
             frag_control = 0;
         }
-
+    //메인 -> 플래그먼트
         private void else_transaction(Fragment fragment) {
             transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.frame, fragment);
@@ -242,8 +242,8 @@ public class MainActivity extends AppCompatActivity {
             imageView.setVisibility(View.GONE);
 
         }
-        //저장 함수
-
+        
+        //버튼 로드
         private void Q_L() {
             sharedPreferences = getSharedPreferences("main", MODE_PRIVATE);
             editor = sharedPreferences.edit();
@@ -255,6 +255,8 @@ public class MainActivity extends AppCompatActivity {
             relativeLayout = (RelativeLayout) findViewById(R.id.relative);
             imageView = (ImageView) findViewById(R.id.ch_Img);
             textView = (TextView) findViewById(R.id.main_money);
+
+
             return;
         }
 
@@ -271,7 +273,7 @@ public class MainActivity extends AppCompatActivity {
             money.interrupt();
 
         }
-
+        //액티비티 종료
         @Override
         protected void onDestroy() {
             editor.putInt("money",0);
@@ -289,7 +291,7 @@ public class MainActivity extends AppCompatActivity {
             money.interrupt();
 
         }
-
+        //뒤로가기 버튼
         @Override
         public void onBackPressed() {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -319,8 +321,9 @@ public class MainActivity extends AppCompatActivity {
 
             builder.show();
         }
-
+        //raid_select.xml 버튼 이벤트
         public void OnClick(View v){
+
             switch (v.getId()){
                 case R.id.raid1_btn:
                     ChangeHome(raid1.class);
