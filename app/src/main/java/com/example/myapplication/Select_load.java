@@ -58,7 +58,13 @@ public class Select_load extends AppCompatActivity {
                         editor.putInt("Level", sharedPreferences.getInt("Save1_Level", 0));
                         editor.putInt("Character", sharedPreferences.getInt("Save1_ch_Img", 0));
                         editor.putInt("HP",sharedPreferences.getInt("Save1_HP",100));
+                        editor.putInt("atk",sharedPreferences.getInt("Save1_atk",100));
+                        editor.putInt("defence",sharedPreferences.getInt("Save1_defence",100));
+                        editor.putInt("luk",sharedPreferences.getInt("Save1_luk",100));
                         editor.putInt("HP_btn",sharedPreferences.getInt("Save1_HP_btn",1));
+                        editor.putInt("atk_btn",sharedPreferences.getInt("Save1_atk_btn",1));
+                        editor.putInt("defence_btn",sharedPreferences.getInt("Save1_defence_btn",1));
+                        editor.putInt("luk_btn",sharedPreferences.getInt("Save1_luk_btn",1));
                         editor.putInt("difficulty",sharedPreferences.getInt("Save1_difficulty",-1));
                         editor.commit();
 
