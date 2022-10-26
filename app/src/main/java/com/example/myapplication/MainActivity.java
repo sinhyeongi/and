@@ -99,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
         Q_L();
         BtnEventLoad();
         textView.setText(String.valueOf(sharedPreferences.getInt("money", 0)));
-
         imageView.setImageResource(sharedPreferences.getInt("Character", R.drawable.ic_launcher_foreground));
         Glide.with(this).load(sharedPreferences.getInt("Character", R.drawable.ic_launcher_foreground)).into(imageView);
 
@@ -275,8 +274,19 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected void onDestroy() {
+            editor.putInt("money",0);
+            editor.putInt("Level",0);
+            editor.putInt("HP",0);
+            editor.putInt("atk",0);
+            editor.putInt("defence",0);
+            editor.putInt("luk",0);
+            editor.putInt("HP_btn",0);
+            editor.putInt("atk_btn",0);
+            editor.putInt("defence_btn",0);
+            editor.putInt("luk_btn",0);
+            editor.commit();
             super.onDestroy();
-
+            money.interrupt();
 
         }
 

@@ -71,29 +71,102 @@ public class state extends Fragment {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_state,null);
-        Button btn = (Button) view.findViewById(R.id.HP_btn);
-        TextView textView = (TextView) view.findViewById(R.id.getHP);
-        btn.setText(String.valueOf(sharedPreferences.getInt("HP_btn",1)));
-        textView.setText(String.valueOf(sharedPreferences.getInt("HP",100)));
-        btn.setOnClickListener(new View.OnClickListener() {
-            int i = 0, money;
+        Button hp_btn = (Button) view.findViewById(R.id.HP_btn);
+        Button atk_btn = (Button) view.findViewById(R.id.atk_btn);
+        Button defence_btn = (Button) view.findViewById(R.id.defense_btn);
+        Button luk_btn = (Button) view.findViewById(R.id.luk_btn);
+        //button end
+        TextView hp_textView = (TextView) view.findViewById(R.id.getHP);
+        TextView atk_textView = (TextView) view.findViewById(R.id.getatk);
+        TextView defence_textView = (TextView) view.findViewById(R.id.getdefense);
+        TextView luk_textView = (TextView) view.findViewById(R.id.getluk);
+        //text end
+        hp_btn.setText(String.valueOf(sharedPreferences.getInt("HP_btn",1)));
+        atk_btn.setText(String.valueOf(sharedPreferences.getInt("atk_btn",1)));
+        defence_btn.setText(String.valueOf(sharedPreferences.getInt("defence_btn",1)));
+        luk_btn.setText(String.valueOf(sharedPreferences.getInt("luk_btn",1)));
+        //버튼 기본값 받아오기
+        hp_textView.setText(String.valueOf(sharedPreferences.getInt("HP",100)));
+        atk_textView.setText(String.valueOf(sharedPreferences.getInt("atk",10)));
+        defence_textView.setText(String.valueOf(sharedPreferences.getInt("defence",0)));
+        luk_textView.setText(String.valueOf(sharedPreferences.getInt("luk",0)));
+        //텍스트 기본값 받아오기
+        //버튼 이벤트 시작
+
+        View.OnClickListener onClickListener = new View.OnClickListener() {
+            int i, money;
             @Override
             public void onClick(View view) {
                 money = sharedPreferences.getInt("money",0);
-                i = Integer.parseInt(btn.getText().toString());
-                if (money >= i) {
-                    money -= i;
-                    i += 1;
-                    btn.setText(String.valueOf(i));
-                    editor.putInt("HP_btn",i);
-                    i = Integer.parseInt(textView.getText().toString()) + 1;
-                    textView.setText(String.valueOf(i));
-                    editor.putInt("HP",i);
-                    editor.putInt("money",money);
-                    editor.commit();
+                i = 0;
+                switch (view.getId()){
+                    case R.id.HP_btn:
+                        i = Integer.parseInt(hp_btn.getText().toString());
+                        if (money >= i) {
+                            money -= i;
+                            i += 1;
+                            hp_btn.setText(String.valueOf(i));
+                            editor.putInt("HP_btn",i);
+                            i = Integer.parseInt(hp_textView.getText().toString()) + 1;
+                            hp_textView.setText(String.valueOf(i));
+                            editor.putInt("HP",i);
+                            editor.putInt("money",money);
+                            editor.commit();
+                        }
+                        break;
+                    case R.id.atk_btn:
+                        i = Integer.parseInt(atk_btn.getText().toString());
+                        if (money >= i) {
+                            money -= i;
+                            i += 1;
+                            atk_btn.setText(String.valueOf(i));
+                            editor.putInt("atk_btn",i);
+                            i = Integer.parseInt(atk_textView.getText().toString()) + 1;
+                            atk_textView.setText(String.valueOf(i));
+                            editor.putInt("atk",i);
+                            editor.putInt("money",money);
+                            editor.commit();
+                        }
+                        break;
+                    case R.id.defense_btn:
+                        i = Integer.parseInt(defence_btn.getText().toString());
+                        if (money >= i) {
+                            money -= i;
+                            i += 1;
+                            defence_btn.setText(String.valueOf(i));
+                            editor.putInt("defence_btn",i);
+                            i = Integer.parseInt(defence_textView.getText().toString()) + 1;
+                            defence_textView.setText(String.valueOf(i));
+                            editor.putInt("defence",i);
+                            editor.putInt("money",money);
+                            editor.commit();
+                        }
+                        break;
+                    case R.id.luk_btn:
+                        i = Integer.parseInt(luk_btn.getText().toString());
+                        if (money >= i) {
+                            money -= i;
+                            i += 1;
+                            luk_btn.setText(String.valueOf(i));
+                            editor.putInt("luk_btn",i);
+                            i = Integer.parseInt(luk_textView.getText().toString()) + 1;
+                            luk_textView.setText(String.valueOf(i));
+                            editor.putInt("luk",i);
+                            editor.putInt("money",money);
+                            editor.commit();
+                        }
+
                 }
             }
-        });
+
+        };
+        hp_btn.setOnClickListener(onClickListener);
+        atk_btn.setOnClickListener(onClickListener);
+        defence_btn.setOnClickListener(onClickListener);
+        luk_btn.setOnClickListener(onClickListener);
         return view;
     }
+
+
+
 }
