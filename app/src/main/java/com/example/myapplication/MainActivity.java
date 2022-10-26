@@ -197,7 +197,6 @@ public class MainActivity extends AppCompatActivity {
                         }
                         break;
                     case R.id.btn_raid:
-
                         Dialog dialog = new Dialog(MainActivity.this);
                         dialog.setContentView(R.layout.raid_select);
                         layoutParams = new WindowManager.LayoutParams();
