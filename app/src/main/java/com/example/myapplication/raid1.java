@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
@@ -17,7 +18,8 @@ public class raid1 extends AppCompatActivity {
     SeekBar seekBar;
     int i = 10;
     Toast toast = null;
-
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
@@ -36,6 +38,12 @@ public class raid1 extends AppCompatActivity {
         switch (event.getAction()){
             case MotionEvent.ACTION_UP:
                 if(i == 0){
+                    Toast.makeText(this,"clear",Toast.LENGTH_SHORT).show();
+                    editor.putInt("boss_clear",1);
+                    editor.commit();
+                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                    startActivity(intent);
+                    finish();
                 }
                 seekBar.setProgress(--i);
 
@@ -45,6 +53,8 @@ public class raid1 extends AppCompatActivity {
     }
     public void Q_L(){
         seekBar = (SeekBar) findViewById(R.id.raid1_seekbar);
+        sharedPreferences = getSharedPreferences("main",MODE_PRIVATE);
+        editor = sharedPreferences.edit();
     }
     @Override
     public void onBackPressed() {

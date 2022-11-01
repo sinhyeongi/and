@@ -12,7 +12,7 @@ public class raid3 extends AppCompatActivity {
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-        //setContentView(R.layout.raid1);
+        setContentView(R.layout.raid1);
     }
 
     @Override

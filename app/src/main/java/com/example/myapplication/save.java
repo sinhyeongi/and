@@ -131,9 +131,11 @@ public class save extends Fragment{
                             editor.putInt("Save1_defence_btn",sharedPreferences.getInt("defence_btn",0));
                             editor.putInt("Save1_luk",sharedPreferences.getInt("luk",0));
                             editor.putInt("Save1_luk_btn",sharedPreferences.getInt("luk_btn",0));
+                            editor.putInt("save1_boss_clear",sharedPreferences.getInt("boss_clear", 0));
                             editor.commit();
                             textView1.setText(String.valueOf(sharedPreferences.getInt("Save1_Level", 0)));
                             textView2.setText(String.valueOf(sharedPreferences.getInt("Save1_money", 0)));
+
                             return;
                         }
                     });
@@ -157,6 +159,7 @@ public class save extends Fragment{
                     editor.putInt("Save1_defence_btn",sharedPreferences.getInt("defence_btn",0));
                     editor.putInt("Save1_luk",sharedPreferences.getInt("luk",0));
                     editor.putInt("Save1_luk_btn",sharedPreferences.getInt("luk_btn",0));
+                    editor.putInt("save1_boss_clear",sharedPreferences.getInt("boss_clear", 0));
                     editor.commit();
                     textView1.setText(String.valueOf(sharedPreferences.getInt("Save1_Level", 0)));
                     textView2.setText(String.valueOf(sharedPreferences.getInt("Save1_money", 0)));
@@ -187,6 +190,7 @@ public class save extends Fragment{
                             editor.putInt("Save2_defence_btn",sharedPreferences.getInt("defence_btn",0));
                             editor.putInt("Save2_luk",sharedPreferences.getInt("luk",0));
                             editor.putInt("Save2_luk_btn",sharedPreferences.getInt("luk_btn",0));
+                            editor.putInt("save2_boss_clear",sharedPreferences.getInt("boss_clear", 0));
                             editor.commit();
                             textView3.setText(String.valueOf(sharedPreferences.getInt("Save2_Level", 0)));
                             textView4.setText(String.valueOf(sharedPreferences.getInt("Save2_money", 0)));
@@ -213,6 +217,7 @@ public class save extends Fragment{
                     editor.putInt("Save2_defence_btn",sharedPreferences.getInt("defence_btn",0));
                     editor.putInt("Save2_luk",sharedPreferences.getInt("luk",0));
                     editor.putInt("Save2_luk_btn",sharedPreferences.getInt("luk_btn",0));
+                    editor.putInt("save2_boss_clear",sharedPreferences.getInt("boss_clear", 0));
                     editor.commit();
                     textView3.setText(String.valueOf(sharedPreferences.getInt("Save2_Level", 0)));
                     textView4.setText(String.valueOf(sharedPreferences.getInt("Save2_money", 0)));
@@ -243,6 +248,7 @@ public class save extends Fragment{
                             editor.putInt("Save3_defence_btn",sharedPreferences.getInt("defence_btn",0));
                             editor.putInt("Save3_luk",sharedPreferences.getInt("luk",0));
                             editor.putInt("Save3_luk_btn",sharedPreferences.getInt("luk_btn",0));
+                            editor.putInt("save3_boss_clear",sharedPreferences.getInt("boss_clear", 0));
                             editor.commit();
                             textView5.setText(String.valueOf(sharedPreferences.getInt("Save3_Level", 0)));
                             textView6.setText(String.valueOf(sharedPreferences.getInt("Save3_money", 0)));
@@ -269,6 +275,7 @@ public class save extends Fragment{
                     editor.putInt("Save3_defence_btn",sharedPreferences.getInt("defence_btn",0));
                     editor.putInt("Save3_luk",sharedPreferences.getInt("luk",0));
                     editor.putInt("Save3_luk_btn",sharedPreferences.getInt("luk_btn",0));
+                    editor.putInt("save3_boss_clear",sharedPreferences.getInt("boss_clear", 0));
                     editor.commit();
                     textView5.setText(String.valueOf(sharedPreferences.getInt("Save3_Level", 0)));
                     textView6.setText(String.valueOf(sharedPreferences.getInt("Save3_money", 0)));

@@ -200,6 +200,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.btn_raid:
                         Custom_Dialog custom_dialog = new Custom_Dialog();
                         custom_dialog.Dialog(context);
+                        custom_dialog.Chang_button(sharedPreferences.getInt("boss_clear",0));
                         break;
                 }
                 mimi.setClickable(true);
@@ -313,11 +314,8 @@ public class MainActivity extends AppCompatActivity {
 
             builder.show();
         }
-        //raid_select.xml 버튼 이벤트
-        public void OnClick(View v){
-
-
-            switch (v.getId()){
+        public void onclick(View view){
+            switch (view.getId()){
                 case R.id.raid1_btn:
                     ChangeHome(raid1.class);
                     break;
@@ -327,7 +325,6 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.raid3_btn:
                     ChangeHome(raid3.class);
                     break;
-
             }
         }
 
