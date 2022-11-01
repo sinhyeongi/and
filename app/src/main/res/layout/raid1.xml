@@ -13,12 +13,34 @@
         android:progress="10"
         android:id="@+id/raid1_seekbar"/>
 
-<TextView
+<ImageView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintBottom_toBottomOf="parent"
+    android:src="@drawable/ic_launcher_background"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
-    android:text="raid1"/>
+    app:layout_constraintVertical_bias="0.9"
+    android:id="@+id/raid_ch"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        app:layout_constraintTop_toTopOf="@+id/raid_ch"
+        app:layout_constraintBottom_toBottomOf="@+id/raid_ch"
+        app:layout_constraintLeft_toRightOf="@+id/raid_ch"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textSize="50dp"
+        android:id="@+id/raid_ch_tx"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher_background"
+        app:layout_constraintTop_toBottomOf="@+id/raid1_seekbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        android:id="@+id/boss_ch"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

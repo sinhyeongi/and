@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.SeekBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -20,6 +22,8 @@ public class raid1 extends AppCompatActivity {
     Toast toast = null;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
+    ImageView boss,ch;
+    TextView textView;
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
@@ -55,6 +59,9 @@ public class raid1 extends AppCompatActivity {
         seekBar = (SeekBar) findViewById(R.id.raid1_seekbar);
         sharedPreferences = getSharedPreferences("main",MODE_PRIVATE);
         editor = sharedPreferences.edit();
+        boss = (ImageView) findViewById(R.id.boss_ch);
+        ch = (ImageView) findViewById(R.id.raid_ch);
+        textView = (TextView) findViewById(R.id.raid_ch_tx);
     }
     @Override
     public void onBackPressed() {
