@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -15,15 +16,19 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+
+import com.bumptech.glide.Glide;
 
 public class raid1 extends AppCompatActivity {
     SeekBar seekBar;
-    int i = 10;
+    int i;
     Toast toast = null;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     ImageView boss,ch;
-    TextView textView;
+    TextView textView,boss_tx;
+    ConstraintLayout constraintLayout;
     @Override
     protected void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
@@ -41,16 +46,29 @@ public class raid1 extends AppCompatActivity {
     public boolean onTouchEvent(MotionEvent event){
         switch (event.getAction()){
             case MotionEvent.ACTION_UP:
+                i -= sharedPreferences.getInt("atk",0);
+                if (i<0) {i =0;}
                 if(i == 0){
+                    seekBar.setProgress(i);
+                    boss_tx.setText(String.valueOf(i));
                     Toast.makeText(this,"clear",Toast.LENGTH_SHORT).show();
                     editor.putInt("boss_clear",1);
                     editor.commit();
                     Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                     startActivity(intent);
                     finish();
+                    break;
                 }
-                seekBar.setProgress(--i);
-
+                if (Integer.parseInt(String.valueOf(textView.getText().toString()))<=0){
+                    Toast.makeText(this,"fail",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                    break;
+                }
+                seekBar.setProgress(i);
+                boss_tx.setText(String.valueOf(i));
+                textView.setText(String.valueOf(Integer.parseInt(textView.getText().toString())-1));
                 break;
         }
         return true;
@@ -62,6 +80,15 @@ public class raid1 extends AppCompatActivity {
         boss = (ImageView) findViewById(R.id.boss_ch);
         ch = (ImageView) findViewById(R.id.raid_ch);
         textView = (TextView) findViewById(R.id.raid_ch_tx);
+        boss_tx = (TextView) findViewById(R.id.raid_boss_hp);
+        textView.setText(String.valueOf(sharedPreferences.getInt("HP",0)));
+        i = boss_hp(sharedPreferences.getInt("difficulty",0));
+        seekBar.setMax(i);
+        boss_tx.setText(String.valueOf(i));
+        ch.setImageResource(sharedPreferences.getInt("Character", R.drawable.ic_launcher_foreground));
+        Glide.with(this).load(sharedPreferences.getInt("Character", R.drawable.ic_launcher_foreground)).into(ch);
+        constraintLayout = (ConstraintLayout) findViewById(R.id.raid_background);
+        constraintLayout.setBackgroundResource(R.drawable.card_d);
     }
     @Override
     public void onBackPressed() {
@@ -90,5 +117,18 @@ public class raid1 extends AppCompatActivity {
         });
 
         builder.show();
+    }
+    public int boss_hp(int i){
+        switch (i){
+            case 0:
+                return i=100;
+            case 1:
+                return i=500;
+            case 2:
+                return i=1000;
+            default:
+                return i=9999999;
+        }
+
     }
 }

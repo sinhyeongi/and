@@ -269,20 +269,8 @@ public class MainActivity extends AppCompatActivity {
         //액티비티 종료
         @Override
         protected void onDestroy() {
-            editor.putInt("money",0);
-            editor.putInt("Level",0);
-            editor.putInt("HP",0);
-            editor.putInt("atk",0);
-            editor.putInt("defence",0);
-            editor.putInt("luk",0);
-            editor.putInt("HP_btn",0);
-            editor.putInt("atk_btn",0);
-            editor.putInt("defence_btn",0);
-            editor.putInt("luk_btn",0);
-            editor.commit();
-            super.onDestroy();
             money.interrupt();
-
+            super.onDestroy();
         }
         //뒤로가기 버튼
         @Override

@@ -122,7 +122,7 @@ public class save extends Fragment{
                             editor.putInt("Save1_Level", sharedPreferences.getInt("Level", 0));
                             editor.putInt("Save1_money", sharedPreferences.getInt("money", 0));
                             editor.putInt("Save1_ch_Img", sharedPreferences.getInt("Character",0));
-                            editor.putInt("Save1_difficulty",sharedPreferences.getInt("difficulty",0));
+                            editor.putInt("Save1_difficulty",sharedPreferences.getInt("difficulty",-1));
                             editor.putInt("Save1_HP",sharedPreferences.getInt("HP",0));
                             editor.putInt("Save1_HP_btn",sharedPreferences.getInt("HP_btn",0));
                             editor.putInt("Save1_atk",sharedPreferences.getInt("atk",0));
@@ -150,7 +150,7 @@ public class save extends Fragment{
                     editor.putInt("Save1_Level", sharedPreferences.getInt("Level", 0));
                     editor.putInt("Save1_money", sharedPreferences.getInt("money", 0));
                     editor.putInt("Save1_ch_Img", sharedPreferences.getInt("Character",0));
-                    editor.putInt("Save1_difficulty",sharedPreferences.getInt("difficulty",0));
+                    editor.putInt("Save1_difficulty",sharedPreferences.getInt("difficulty",-1));
                     editor.putInt("Save1_HP",sharedPreferences.getInt("HP",0));
                     editor.putInt("Save1_HP_btn",sharedPreferences.getInt("HP_btn",0));
                     editor.putInt("Save1_atk",sharedPreferences.getInt("atk",0));
@@ -208,7 +208,7 @@ public class save extends Fragment{
                     editor.putInt("Save2_Level", sharedPreferences.getInt("Level", 0));
                     editor.putInt("Save2_money", sharedPreferences.getInt("money", 0));
                     editor.putInt("Save2_ch_Img", sharedPreferences.getInt("Character",0));
-                    editor.putInt("Save2_difficulty",sharedPreferences.getInt("difficulty",0));
+                    editor.putInt("Save2_difficulty",sharedPreferences.getInt("difficulty",-1));
                     editor.putInt("Save2_HP",sharedPreferences.getInt("HP",0));
                     editor.putInt("Save2_HP_btn",sharedPreferences.getInt("HP_btn",0));
                     editor.putInt("Save2_atk",sharedPreferences.getInt("atk",0));
@@ -239,7 +239,7 @@ public class save extends Fragment{
                             editor.putInt("Save3_Level", sharedPreferences.getInt("Level", 0));
                             editor.putInt("Save3_money", sharedPreferences.getInt("money", 0));
                             editor.putInt("Save3_ch_Img", sharedPreferences.getInt("Character",0));
-                            editor.putInt("Save3_difficulty",sharedPreferences.getInt("difficulty",0));
+                            editor.putInt("Save3_difficulty",sharedPreferences.getInt("difficulty",-1));
                             editor.putInt("Save3_HP",sharedPreferences.getInt("HP",0));
                             editor.putInt("Save3_HP_btn",sharedPreferences.getInt("HP_btn",0));
                             editor.putInt("Save3_atk",sharedPreferences.getInt("atk",0));
@@ -266,7 +266,7 @@ public class save extends Fragment{
                     editor.putInt("Save3_Level", sharedPreferences.getInt("Level", 0));
                     editor.putInt("Save3_money", sharedPreferences.getInt("money", 0));
                     editor.putInt("Save3_ch_Img", sharedPreferences.getInt("Character",0));
-                    editor.putInt("Save3_difficulty",sharedPreferences.getInt("difficulty",0));
+                    editor.putInt("Save3_difficulty",sharedPreferences.getInt("difficulty",-1));
                     editor.putInt("Save3_HP",sharedPreferences.getInt("HP",0));
                     editor.putInt("Save3_HP_btn",sharedPreferences.getInt("HP_btn",0));
                     editor.putInt("Save3_atk",sharedPreferences.getInt("atk",0));

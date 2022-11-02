@@ -36,6 +36,7 @@ public class Custom_Dialog {
             button2.setClickable(true);
         }
         if (i == 2){
+            button2.setClickable(true);
             button3.setClickable(true);
         }
 
