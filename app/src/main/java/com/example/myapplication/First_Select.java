@@ -5,18 +5,20 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class First_Select extends AppCompatActivity {
-    Button btn_load,btn_new,btn_exit;
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.first_select);
+        Button btn_load,btn_new,btn_exit;
+        SharedPreferences sharedPreferences;
+        SharedPreferences.Editor editor;
         btn_exit = (Button) findViewById(R.id.btn_exit);
         btn_new = (Button) findViewById(R.id.btn_new);
         btn_load = (Button) findViewById(R.id.btn_load);
@@ -28,7 +30,7 @@ public class First_Select extends AppCompatActivity {
         editor.putInt("money",0);
         editor.putInt("Level",0);
         editor.putInt("HP",0);
-        editor.putInt("atk",0);
+        editor.putInt("atk",1);
         editor.putInt("defence",0);
         editor.putInt("luk",0);
         editor.putInt("HP_btn",0);

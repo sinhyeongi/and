@@ -242,7 +242,7 @@ public class save extends Fragment{
                             editor.putInt("Save3_difficulty",sharedPreferences.getInt("difficulty",-1));
                             editor.putInt("Save3_HP",sharedPreferences.getInt("HP",0));
                             editor.putInt("Save3_HP_btn",sharedPreferences.getInt("HP_btn",0));
-                            editor.putInt("Save3_atk",sharedPreferences.getInt("atk",0));
+                            editor.putInt("Save3_atk",sharedPreferences.getInt("atk",1));
                             editor.putInt("Save3_atk_btn",sharedPreferences.getInt("atk_btn",0));
                             editor.putInt("Save3_defence",sharedPreferences.getInt("defence_btn",0));
                             editor.putInt("Save3_defence_btn",sharedPreferences.getInt("defence_btn",0));

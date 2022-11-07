@@ -74,6 +74,8 @@ public class Select_new extends AppCompatActivity {
         editor.putInt("Character", 0);
         editor.putInt("HP",100);
         editor.putInt("HP_btn",1);
+        editor.putInt("atk",1);
+        editor.putInt("atk_btn",1);
         editor.commit();
     }
 

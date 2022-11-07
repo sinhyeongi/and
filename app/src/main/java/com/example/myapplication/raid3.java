@@ -46,7 +46,7 @@ public class raid3 extends AppCompatActivity {
     public boolean onTouchEvent(MotionEvent event){
         switch (event.getAction()){
             case MotionEvent.ACTION_UP:
-                i -= sharedPreferences.getInt("atk",0);
+                i -= sharedPreferences.getInt("atk",1);
                 if (i<0) {i =0;}
                 if(i == 0){
                     seekBar.setProgress(i);
@@ -87,8 +87,10 @@ public class raid3 extends AppCompatActivity {
         boss_tx.setText(String.valueOf(i));
         ch.setImageResource(sharedPreferences.getInt("Character", R.drawable.ic_launcher_foreground));
         Glide.with(this).load(sharedPreferences.getInt("Character", R.drawable.ic_launcher_foreground)).into(ch);
+        boss.setImageResource(boss_id(sharedPreferences.getInt("Character", R.drawable.ic_launcher_foreground)));
+        Glide.with(this).load(boss_id(sharedPreferences.getInt("Character", R.drawable.ic_launcher_foreground))).into(boss);
         constraintLayout = (ConstraintLayout) findViewById(R.id.raid_background);
-        constraintLayout.setBackgroundResource(R.drawable.card_d);
+        constraintLayout.setBackgroundResource(R.drawable.raid3);
     }
     @Override
     public void onBackPressed() {
@@ -130,5 +132,13 @@ public class raid3 extends AppCompatActivity {
                 return i=9999999;
         }
 
+    }
+    public int boss_id(int i){
+        int i2 = R.drawable.cha_f;
+        if (i != i2){
+            return i2;
+        }else{
+            return R.drawable.cha_m;
+        }
     }
 }

@@ -46,7 +46,7 @@ public class raid1 extends AppCompatActivity {
     public boolean onTouchEvent(MotionEvent event){
         switch (event.getAction()){
             case MotionEvent.ACTION_UP:
-                i -= sharedPreferences.getInt("atk",0);
+                i -= sharedPreferences.getInt("atk",1);
                 if (i<0) {i =0;}
                 if(i == 0){
                     seekBar.setProgress(i);
@@ -87,10 +87,10 @@ public class raid1 extends AppCompatActivity {
         boss_tx.setText(String.valueOf(i));
         ch.setImageResource(sharedPreferences.getInt("Character", R.drawable.ic_launcher_foreground));
         Glide.with(this).load(sharedPreferences.getInt("Character", R.drawable.ic_launcher_foreground)).into(ch);
-        boss.setImageResource(R.drawable.ic_launcher_foreground);
-        Glide.with(this).load(R.drawable.ic_launcher_foreground).into(boss);
+        boss.setImageResource(R.drawable.raid1_boss);
+        Glide.with(this).load(R.drawable.raid1_boss).into(boss);
         constraintLayout = (ConstraintLayout) findViewById(R.id.raid_background);
-        constraintLayout.setBackgroundResource(R.drawable.card_d);
+        constraintLayout.setBackgroundResource(R.drawable.raid1);
     }
     @Override
     public void onBackPressed() {

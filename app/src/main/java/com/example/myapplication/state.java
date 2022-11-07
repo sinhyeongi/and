@@ -87,7 +87,7 @@ public class state extends Fragment {
         luk_btn.setText(String.valueOf(sharedPreferences.getInt("luk_btn",1)));
         //버튼 기본값 받아오기
         hp_textView.setText(String.valueOf(sharedPreferences.getInt("HP",100)));
-        atk_textView.setText(String.valueOf(sharedPreferences.getInt("atk",10)));
+        atk_textView.setText(String.valueOf(sharedPreferences.getInt("atk",1)));
         defence_textView.setText(String.valueOf(sharedPreferences.getInt("defence",0)));
         luk_textView.setText(String.valueOf(sharedPreferences.getInt("luk",0)));
         //텍스트 기본값 받아오기

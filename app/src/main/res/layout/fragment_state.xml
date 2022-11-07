@@ -53,7 +53,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="10"
+            android:text="1"
             app:layout_constraintLeft_toLeftOf="@+id/getHP"
             app:layout_constraintTop_toTopOf="@+id/atk"
             android:textSize="30dp"
