@@ -69,11 +69,17 @@ public class state_view extends Fragment {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_state_view,null);
-        TextView hp,level;
+        TextView hp,level,atk,difence,luk;
         hp = (TextView) view.findViewById(R.id.state_HP_text);
         level = (TextView) view.findViewById(R.id.state_Level_text);
+        atk = (TextView) view.findViewById(R.id.state_atk_text);
+        difence = (TextView) view.findViewById(R.id.state_difence_text);
+        luk = (TextView) view.findViewById(R.id.state_luk_text);
         hp.setText(String.valueOf(sharedPreferences.getInt("HP",100)));
         level.setText(String.valueOf(sharedPreferences.getInt("Level",0)));
+        atk.setText(String.valueOf(sharedPreferences.getInt("atk",0)));
+        difence.setText(String.valueOf(sharedPreferences.getInt("defence",0)));
+        luk.setText(String.valueOf(sharedPreferences.getInt("luk",0)));
         return view;
     }
 }

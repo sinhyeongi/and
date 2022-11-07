@@ -9,20 +9,22 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <!-- Hp -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:text="HP : "
-        android:layout_marginTop="100dp"
+        app:layout_constraintVertical_bias="0.1"
+        android:text="HP"
         android:layout_marginLeft="50dp"
         android:textSize="30dp"
         android:id="@+id/hp"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="100"
+        android:text="10"
         app:layout_constraintLeft_toRightOf="@+id/hp"
         app:layout_constraintTop_toTopOf="@+id/hp"
         android:textSize="30dp"
@@ -36,5 +38,94 @@
             app:layout_constraintTop_toTopOf="@+id/getHP"
             android:layout_marginLeft="30dp"
             android:id="@+id/HP_btn"/>
+        <!-- Hp End -->
+        <!-- atk -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/hp"
+            app:layout_constraintRight_toRightOf="@+id/hp"
+            app:layout_constraintLeft_toLeftOf="@+id/hp"
+            android:layout_marginTop="50dp"
+            android:text="공격력"
+            android:textSize="30dp"
+            android:id="@+id/atk"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            app:layout_constraintLeft_toLeftOf="@+id/getHP"
+            app:layout_constraintTop_toTopOf="@+id/atk"
+            android:textSize="30dp"
+            app:layout_constraintRight_toRightOf="@+id/getHP"
+            android:id="@+id/getatk"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            app:layout_constraintLeft_toRightOf="@+id/getatk"
+            app:layout_constraintTop_toTopOf="@+id/getatk"
+            app:layout_constraintLeft_toLeftOf="@+id/HP_btn"
+            android:id="@+id/atk_btn"/>
+        <!-- atk End -->
+        <!-- defense -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/atk"
+            app:layout_constraintRight_toRightOf="@+id/hp"
+            app:layout_constraintLeft_toLeftOf="@+id/hp"
+            android:layout_marginTop="50dp"
+            android:text="방어력"
+            android:textSize="30dp"
+            android:id="@+id/defense"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            app:layout_constraintLeft_toLeftOf="@+id/getHP"
+            app:layout_constraintTop_toTopOf="@+id/defense"
+            android:textSize="30dp"
+            app:layout_constraintRight_toRightOf="@+id/getHP"
+            android:id="@+id/getdefense"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            app:layout_constraintLeft_toRightOf="@+id/getHP"
+            app:layout_constraintTop_toTopOf="@+id/getdefense"
+            app:layout_constraintLeft_toLeftOf="@+id/HP_btn"
+            android:id="@+id/defense_btn"/>
+        <!-- defense end-->
+        <!-- luk -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/defense"
+            app:layout_constraintRight_toRightOf="@+id/hp"
+            app:layout_constraintLeft_toLeftOf="@+id/hp"
+            android:layout_marginTop="50dp"
+            android:text="행운"
+            android:textSize="30dp"
+            android:id="@+id/luk"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            app:layout_constraintLeft_toLeftOf="@+id/getHP"
+            app:layout_constraintTop_toTopOf="@+id/luk"
+            android:textSize="30dp"
+            app:layout_constraintRight_toRightOf="@+id/getHP"
+            android:id="@+id/getluk"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            app:layout_constraintLeft_toRightOf="@+id/getluk"
+            app:layout_constraintTop_toTopOf="@+id/getluk"
+            app:layout_constraintLeft_toLeftOf="@+id/HP_btn"
+            android:id="@+id/luk_btn"/>
+        <!-- luk end -->
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

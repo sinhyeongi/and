@@ -60,6 +60,13 @@ public class Select_load extends AppCompatActivity {
                         editor.putInt("HP",sharedPreferences.getInt("Save1_HP",100));
                         editor.putInt("HP_btn",sharedPreferences.getInt("Save1_HP_btn",1));
                         editor.putInt("difficulty",sharedPreferences.getInt("Save1_difficulty",-1));
+                        editor.putInt("atk",sharedPreferences.getInt("Save1_atk",0));
+                        editor.putInt("atk_btn",sharedPreferences.getInt("Save1_atk_btn",0));
+                        editor.putInt("defence",sharedPreferences.getInt("Save1_defence",0));
+                        editor.putInt("defence_btn",sharedPreferences.getInt("Save1_defence_btn",0));
+                        editor.putInt("luk",sharedPreferences.getInt("Save1_luk",0));
+                        editor.putInt("luk_btn",sharedPreferences.getInt("Save1_luk_btn",0));
+                        editor.putInt("boss_clear",sharedPreferences.getInt("Save1_boss_clear", 0));
                         editor.commit();
 
                         ChangeHome(MainActivity.class);
@@ -73,6 +80,13 @@ public class Select_load extends AppCompatActivity {
                         editor.putInt("HP",sharedPreferences.getInt("Save2_HP",100));
                         editor.putInt("HP_btn",sharedPreferences.getInt("Save2_HP_btn",1));
                         editor.putInt("difficulty",sharedPreferences.getInt("Save2_difficulty",-1));
+                        editor.putInt("atk",sharedPreferences.getInt("Save2_atk",0));
+                        editor.putInt("atk_btn",sharedPreferences.getInt("Save2_atk_btn",0));
+                        editor.putInt("defence",sharedPreferences.getInt("Save2_defence",0));
+                        editor.putInt("defence_btn",sharedPreferences.getInt("Save2_defence_btn",0));
+                        editor.putInt("luk",sharedPreferences.getInt("Save2_luk",0));
+                        editor.putInt("luk_btn",sharedPreferences.getInt("Save2_luk_btn",0));
+                        editor.putInt("boss_clear",sharedPreferences.getInt("Save2_boss_clear", 0));
                         editor.commit();
 
                         ChangeHome(MainActivity.class);
@@ -86,6 +100,13 @@ public class Select_load extends AppCompatActivity {
                         editor.putInt("HP",sharedPreferences.getInt("Save3_HP",100));
                         editor.putInt("HP_btn",sharedPreferences.getInt("Save3_HP_btn",1));
                         editor.putInt("difficulty",sharedPreferences.getInt("Save3_difficulty",-1));
+                        editor.putInt("atk",sharedPreferences.getInt("Save3_atk",0));
+                        editor.putInt("atk_btn",sharedPreferences.getInt("Save3_atk_btn",0));
+                        editor.putInt("defence",sharedPreferences.getInt("Save3_defence",0));
+                        editor.putInt("defence_btn",sharedPreferences.getInt("Save3_defence_btn",0));
+                        editor.putInt("luk",sharedPreferences.getInt("Save3_luk",0));
+                        editor.putInt("luk_btn",sharedPreferences.getInt("Save3_luk_btn",0));
+                        editor.putInt("boss_clear",sharedPreferences.getInt("Save3_boss_clear", 0));
                         editor.commit();
                         ChangeHome(MainActivity.class);
                     }

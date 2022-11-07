@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class First_Select extends AppCompatActivity {
     Button btn_load,btn_new,btn_exit;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +23,20 @@ public class First_Select extends AppCompatActivity {
         btn_exit.setOnClickListener(onClickListener);
         btn_new.setOnClickListener(onClickListener);
         btn_load.setOnClickListener(onClickListener);
+        sharedPreferences = getSharedPreferences("main",MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        editor.putInt("money",0);
+        editor.putInt("Level",0);
+        editor.putInt("HP",0);
+        editor.putInt("atk",0);
+        editor.putInt("defence",0);
+        editor.putInt("luk",0);
+        editor.putInt("HP_btn",0);
+        editor.putInt("atk_btn",0);
+        editor.putInt("defence_btn",0);
+        editor.putInt("luk_btn",0);
+        editor.putInt("boss_clear",0);
+        editor.commit();
     }
     View.OnClickListener onClickListener = new View.OnClickListener() {
         Intent intent;

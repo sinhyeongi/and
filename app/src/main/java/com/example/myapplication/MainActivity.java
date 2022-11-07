@@ -29,6 +29,8 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import org.w3c.dom.Text;
+
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
     View view;
+    Context context = this;
     //스레드
     Thread money = new Thread(new Runnable() {
         int ch = 0;
@@ -99,20 +102,17 @@ public class MainActivity extends AppCompatActivity {
         Q_L();
         BtnEventLoad();
         textView.setText(String.valueOf(sharedPreferences.getInt("money", 0)));
-
         imageView.setImageResource(sharedPreferences.getInt("Character", R.drawable.ic_launcher_foreground));
         Glide.with(this).load(sharedPreferences.getInt("Character", R.drawable.ic_launcher_foreground)).into(imageView);
-
         money.setDaemon(true);
         money.start();
         bottomNavigationView.setOnNavigationItemSelectedListener(new ItemSelectedListener());
         mimi.setOnClickListener(onClickListener);
-
     }
 
     //main end
 
-    //bottom click event
+    //플래그먼트 버튼 이벤트
     class ItemSelectedListener implements BottomNavigationView.OnNavigationItemSelectedListener {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -197,19 +197,10 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                         }
                         break;
-                        //수정 부분
                     case R.id.btn_raid:
-                        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                        builder.setTitle("레이드 선택!");
-                        Dialog dialog = builder.create();
-                        layoutParams = new WindowManager.LayoutParams();
-                        layoutParams.copyFrom(dialog.getWindow().getAttributes());
-                        layoutParams.width = WindowManager.LayoutParams.MATCH_PARENT;
-                        layoutParams.height = WindowManager.LayoutParams.MATCH_PARENT;
-                        dialog.setContentView(R.layout.raid_select);
-                        dialog.show();
-                        Window window = dialog.getWindow();
-                        window.setAttributes(layoutParams);
+                        Custom_Dialog custom_dialog = new Custom_Dialog();
+                        custom_dialog.Dialog(context);
+                        custom_dialog.Chang_button(sharedPreferences.getInt("boss_clear",0));
                         break;
                 }
                 mimi.setClickable(true);
@@ -222,19 +213,19 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-
+        
         private void BtnEventLoad() {
             raid.setOnClickListener(onClickListener);
             mimi.setOnClickListener(onClickListener);
         }
-
+        //플래그먼트 -> 플래그먼트
         private void if_transaction() {
             relativeLayout.setVisibility(View.VISIBLE);
             frameLayout.setVisibility(View.GONE);
             imageView.setVisibility(View.VISIBLE);
             frag_control = 0;
         }
-
+    //메인 -> 플래그먼트
         private void else_transaction(Fragment fragment) {
             transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.frame, fragment);
@@ -244,8 +235,8 @@ public class MainActivity extends AppCompatActivity {
             imageView.setVisibility(View.GONE);
 
         }
-        //저장 함수
-
+        
+        //버튼 로드
         private void Q_L() {
             sharedPreferences = getSharedPreferences("main", MODE_PRIVATE);
             editor = sharedPreferences.edit();
@@ -257,7 +248,6 @@ public class MainActivity extends AppCompatActivity {
             relativeLayout = (RelativeLayout) findViewById(R.id.relative);
             imageView = (ImageView) findViewById(R.id.ch_Img);
             textView = (TextView) findViewById(R.id.main_money);
-            view = getLayoutInflater().inflate(R.layout.raid_select,null,false);
 
 
             return;
@@ -276,14 +266,13 @@ public class MainActivity extends AppCompatActivity {
             money.interrupt();
 
         }
-
+        //액티비티 종료
         @Override
         protected void onDestroy() {
+            money.interrupt();
             super.onDestroy();
-
-
         }
-
+        //뒤로가기 버튼
         @Override
         public void onBackPressed() {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -313,6 +302,18 @@ public class MainActivity extends AppCompatActivity {
 
             builder.show();
         }
-
+        public void onclick(View view){
+            switch (view.getId()){
+                case R.id.raid1_btn:
+                    ChangeHome(raid1.class);
+                    break;
+                case R.id.raid2_btn:
+                    ChangeHome(raid2.class);
+                    break;
+                case R.id.raid3_btn:
+                    ChangeHome(raid3.class);
+                    break;
+            }
+        }
 
 }
