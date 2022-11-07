@@ -49,7 +49,7 @@ public class MiniGame_2 extends AppCompatActivity {
                 case R.id.MiniGame2_btn:
                     btn.setClickable(false);
                     money2 = sharedPreferences.getInt("money",0);
-                    money = random.nextInt(100);
+                    money = random.nextInt(100) + (int) (sharedPreferences.getInt("luk",0)*0.2);
                     btn.setText("+ money : "+String.valueOf(money));
                     money2 += money;
                     editor.putInt("money",money2);

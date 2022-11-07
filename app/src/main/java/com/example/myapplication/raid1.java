@@ -87,6 +87,8 @@ public class raid1 extends AppCompatActivity {
         boss_tx.setText(String.valueOf(i));
         ch.setImageResource(sharedPreferences.getInt("Character", R.drawable.ic_launcher_foreground));
         Glide.with(this).load(sharedPreferences.getInt("Character", R.drawable.ic_launcher_foreground)).into(ch);
+        boss.setImageResource(R.drawable.ic_launcher_foreground);
+        Glide.with(this).load(R.drawable.ic_launcher_foreground).into(boss);
         constraintLayout = (ConstraintLayout) findViewById(R.id.raid_background);
         constraintLayout.setBackgroundResource(R.drawable.card_d);
     }
@@ -101,10 +103,10 @@ public class raid1 extends AppCompatActivity {
                 return;
             }
         });
-        builder.setNegativeButton("홈으로", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("메인화면", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Intent intent = new Intent(getApplicationContext(), First_Layout.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 finish();
             }

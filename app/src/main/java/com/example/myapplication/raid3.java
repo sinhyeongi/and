@@ -52,7 +52,7 @@ public class raid3 extends AppCompatActivity {
                     seekBar.setProgress(i);
                     boss_tx.setText(String.valueOf(i));
                     Toast.makeText(this,"clear",Toast.LENGTH_SHORT).show();
-                    editor.putInt("boss_clear",1);
+                    editor.putInt("boss_clear",3);
                     editor.commit();
                     Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                     startActivity(intent);
@@ -101,10 +101,10 @@ public class raid3 extends AppCompatActivity {
                 return;
             }
         });
-        builder.setNegativeButton("홈으로", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("메인화면", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                Intent intent = new Intent(getApplicationContext(), First_Layout.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 finish();
             }
