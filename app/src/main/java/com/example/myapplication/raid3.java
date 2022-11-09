@@ -4,8 +4,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.Layout;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -90,7 +88,7 @@ public class raid3 extends AppCompatActivity {
         boss.setImageResource(boss_id(sharedPreferences.getInt("Character", R.drawable.ic_launcher_foreground)));
         Glide.with(this).load(boss_id(sharedPreferences.getInt("Character", R.drawable.ic_launcher_foreground))).into(boss);
         constraintLayout = (ConstraintLayout) findViewById(R.id.raid_background);
-        constraintLayout.setBackgroundResource(R.drawable.raid3);
+        constraintLayout.setBackgroundResource(R.drawable.raid3_back);
     }
     @Override
     public void onBackPressed() {

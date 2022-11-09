@@ -18,7 +18,7 @@ import java.util.Set;
 public class Custom_Dialog {
     Dialog dl;
     Button button,button2,button3;
-    TextView all_c,click1,click2;
+    TextView all_c,click1,click2,raid2,raid3;
     public void Dialog(Context context){
         dl = new Dialog(context);
         dl.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -32,9 +32,13 @@ public class Custom_Dialog {
         all_c = (TextView) dl.findViewById(R.id.All_c);
         click1 = (TextView) dl.findViewById(R.id.riad2_click);
         click2 = (TextView) dl.findViewById(R.id.riad3_click);
+        raid2 = (TextView) dl.findViewById(R.id.raid2_text);
+        raid3 = (TextView) dl.findViewById(R.id.raid3_text);
         button2.setClickable(false);button3.setClickable(false);
         dl.getWindow().setAttributes((WindowManager.LayoutParams)layoutParams);
         dl.show();
+        click1.bringToFront();
+        click2.bringToFront();
     }
     public void Chang_button(int i){
         if (i == 1){
