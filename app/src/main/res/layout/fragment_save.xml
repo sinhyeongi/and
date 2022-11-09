@@ -8,7 +8,8 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -55,7 +56,8 @@
             android:text="1번"
             android:textSize="30dp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title" />
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            />
 
         <TextView
             android:id="@+id/num2"
@@ -88,7 +90,8 @@
             android:layout_marginLeft="40dp"
             android:layout_marginTop="95dp"
             android:id="@+id/save1_level"
-            app:layout_constraintRight_toRightOf="@id/save1_money"/>
+            app:layout_constraintRight_toRightOf="@id/save1_money"
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -97,6 +100,7 @@
             app:layout_constraintTop_toBottomOf="@id/save1_level"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="10dp"
+
             android:id="@+id/save1_money"/>
         <TextView
             android:layout_width="wrap_content"
@@ -105,6 +109,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="@id/num1"
             app:layout_constraintBottom_toBottomOf="@id/num1"
+
             android:id="@+id/Save1_difi"/>
         <TextView
             android:layout_width="wrap_content"
@@ -139,6 +144,7 @@
             android:text="money :"
             app:layout_constraintLeft_toRightOf="@id/num2"
             app:layout_constraintTop_toBottomOf="@id/save2_level"
+
             android:layout_marginLeft="40dp"
             android:layout_marginTop="10dp"
             android:id="@+id/save2_money"/>
@@ -171,11 +177,11 @@
             app:layout_constraintTop_toBottomOf="@+id/title"
             android:layout_marginTop="95dp"
             app:layout_constraintRight_toRightOf="parent"
-
             android:id="@+id/level1"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             app:layout_constraintLeft_toRightOf="@+id/save1_level"
             app:layout_constraintTop_toBottomOf="@+id/level1"
             android:layout_marginTop="10dp"
@@ -195,6 +201,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             app:layout_constraintLeft_toRightOf="@+id/save2_level"
             app:layout_constraintTop_toBottomOf="@+id/level2"
             android:layout_marginTop="10dp"
@@ -205,6 +212,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             app:layout_constraintLeft_toRightOf="@+id/save3_level"
             app:layout_constraintTop_toBottomOf="@+id/money2"
             android:layout_marginTop="95dp"
@@ -214,6 +222,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             app:layout_constraintLeft_toRightOf="@+id/save3_level"
             app:layout_constraintTop_toBottomOf="@+id/level3"
             android:layout_marginTop="10dp"

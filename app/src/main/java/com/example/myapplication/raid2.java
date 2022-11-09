@@ -85,8 +85,8 @@ public class raid2 extends AppCompatActivity {
         seekBar.setMax(i);
         ch.setImageResource(sharedPreferences.getInt("Character", R.drawable.ic_launcher_foreground));
         Glide.with(this).load(sharedPreferences.getInt("Character", R.drawable.ic_launcher_foreground)).into(ch);
-        boss.setImageResource(R.drawable.raid2_boss);
-        Glide.with(this).load(R.drawable.raid2_boss).into(boss);
+        boss.setImageResource(R.drawable.riad2_boss);
+        Glide.with(this).load(R.drawable.riad2_boss).into(boss);
         constraintLayout = (ConstraintLayout) findViewById(R.id.raid_background);
         constraintLayout.setBackgroundResource(R.drawable.raid2);
     }
