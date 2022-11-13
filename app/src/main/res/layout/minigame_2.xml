@@ -24,5 +24,8 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="30dp"
         android:text="여기를 클릭 하세요!"
-        android:id="@+id/MiniGame2_btn"/>
+        android:textColor="@color/material_dynamic_neutral50"
+        android:id="@+id/MiniGame2_btn"
+        android:background="@drawable/btn_style"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

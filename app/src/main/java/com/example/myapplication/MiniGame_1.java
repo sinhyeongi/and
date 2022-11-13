@@ -10,6 +10,7 @@ import android.media.Image;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -22,6 +23,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
+import java.util.concurrent.Delayed;
 /*
 변경예정
 
@@ -34,7 +36,7 @@ public class MiniGame_1 extends AppCompatActivity {
     TextView textView,textView1,firstTimer;
     ImageView imageView;
     CountDownTimer countDownTimer;
-
+    Handler handler = new Handler(Looper.getMainLooper());
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +64,7 @@ public class MiniGame_1 extends AppCompatActivity {
             }
         }.start();
 
-        new Handler().postDelayed(new Runnable() {
+       handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 countDownTimer = new CountDownTimer(sec,1000) {
@@ -119,6 +121,8 @@ public class MiniGame_1 extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        countDownTimer.cancel();
+        finish();
     }
 
     @Override
@@ -127,4 +131,5 @@ public class MiniGame_1 extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
 }
