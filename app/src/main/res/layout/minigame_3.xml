@@ -29,8 +29,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/btn_style"/>
+        app:layout_constraintTop_toTopOf="parent" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,7 +38,7 @@
         app:layout_constraintTop_toTopOf="@id/MiniGame_num1"
         app:layout_constraintLeft_toRightOf="@id/MiniGame_num1"
         android:layout_marginLeft="40dp"
-        android:background="@drawable/btn_style"/>
+        />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -49,7 +48,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintHorizontal_bias="0.9"
-        android:background="@drawable/btn_style"/>
+        />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -58,7 +57,7 @@
         android:layout_marginTop="40dp"
         android:text="4"
         android:id="@+id/MiniGame_num4"
-        android:background="@drawable/btn_style"/>
+        />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -67,7 +66,7 @@
         app:layout_constraintTop_toTopOf="@id/MiniGame_num4"
         app:layout_constraintLeft_toRightOf="@id/MiniGame_num4"
         android:layout_marginLeft="40dp"
-        android:background="@drawable/btn_style"/>
+        />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -75,8 +74,7 @@
         android:text="6"
         app:layout_constraintTop_toTopOf="@id/MiniGame_num5"
         app:layout_constraintLeft_toRightOf="@id/MiniGame_num5"
-        android:layout_marginLeft="40dp"
-        android:background="@drawable/btn_style"/>
+        android:layout_marginLeft="40dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -86,6 +84,5 @@
         android:layout_marginTop="40dp"
         android:text="0"
         android:id="@+id/MiniGame_num0"
-        android:background="@drawable/btn_style"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,6 +26,5 @@
         android:text="여기를 클릭 하세요!"
         android:textColor="@color/material_dynamic_neutral50"
         android:id="@+id/MiniGame2_btn"
-        android:background="@drawable/btn_style"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>
