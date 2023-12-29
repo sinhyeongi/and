@@ -55,12 +55,16 @@
 # 3. 게임 메인 화면 : MainActivity
 <pre>
   <code>
-    state,save플래그먼트를 소유하고있으며
-    money쓰레드를 메인과 같이 실행하여 1초 마다 1의 money를 획득 하며 runOnIUThread를 통해 UI를 업데이틑 시켜 준다
     
-    ItemSelectedListener의 해당 이벤트를 실행 ->bottom Menu
-    해당 버튼 클릭시 메인 화면의 뷰를 안보이게 설정 후 버튼에 해당 하는 플레그먼트를 띄워줌
+    state,save플래그먼트가 있다
+    money 스레드를 메인과 같이 실행하여 1초 마다 1의 money를 획득 하며 runOnIUThread를 통해 UI를 업데이틑 시켜 준다
+    
+    ItemSelectedListener의 해당 이벤트를 실행 -> bottom Menu
+    해당 버튼 클릭시 메인 화면의 뷰를 안보이게 설정 후 버튼에 해당 하는 플레그먼트를 띄워준다
+    
+    
     if_transaction은 state , save 메뉴를 띄워둔 상태에서 다시 해당 버튼 클릭 시 메뉴를 안보이게 설정 후 게임메인 화면으로 전환
+    
     else_transaction 은 메인화면에서 state, save메뉴 선택 시 해당 화면을 띄우며 메인 메뉴를 안보이게 바꾼다
     
     정보는 현재 캐릭터의 스탯 (체력, 방어력 등)을 보여준다
