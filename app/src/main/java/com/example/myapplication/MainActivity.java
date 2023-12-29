@@ -73,13 +73,7 @@ public class MainActivity extends AppCompatActivity {
             Thread.interrupted();
         }
     });
-    Thread first = new Thread(new Runnable() {
-        @Override
-        public void run() {
-            Intent intent = new Intent(getApplicationContext(), First_Layout.class);
-            startActivity(intent);
-        }
-    });
+
 
     //onCreate
     @Override
