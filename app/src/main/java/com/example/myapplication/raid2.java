@@ -50,8 +50,11 @@ public class raid2 extends AppCompatActivity {
                     seekBar.setProgress(i);
                     boss_tx.setText(String.valueOf(i));
                     Toast.makeText(this,"clear",Toast.LENGTH_SHORT).show();
-                    editor.putInt("boss_clear",2);
-                    editor.commit();
+                    if(sharedPreferences.getInt("boss_clear",0) < 2) {
+                        editor.putInt("boss_clear", 2);
+                        editor.commit();
+                    }
+
                     Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                     startActivity(intent);
                     finish();
